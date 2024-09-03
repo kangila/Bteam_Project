@@ -142,13 +142,22 @@
                 <span>등록날짜</span>
                 <span>답변여부</span>
             </div>
-            <div class="contentRows">
+            <div th:each="question, loop : ${questionList}">
+                <span th:text="${loop.index}"></span>
+                <span>user1</span>
+                <span th:text="${question.title}"></span>
+                <span th:text="${question.question_date}"></span>
+                <span>N</span>
+            </div>
+
+            <!-- <div class="contentRows">
                 <span>1</span>
                 <span>user1</span>
                 <span>강아지 vs 고양이, 당신의 선택은..?</span>
                 <span>2024-07-21</span>
                 <span>N</span>
             </div>
+
             <div class="contentRows">
                 <span>2</span>
                 <span>hmg123</span>
@@ -156,13 +165,14 @@
                 <span>2024-06-30</span>
                 <span>Y</span>
             </div>
+
             <div class="contentRows">
                 <span>3</span>
                 <span>three</span>
                 <span>이거 좋은 건가요? 이거 좋은 건가요? 이거 좋...</span>
                 <span>2024-06-28</span>
                 <span>N</span>
-            </div>
+            </div> -->
         </section>
     </div>
     <script>
