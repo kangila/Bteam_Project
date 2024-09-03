@@ -1,5 +1,7 @@
 package com.example.demo.admin.model;
 
-public class adminRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface adminRepository extends JpaRepository<buyuser, Integer> {
 
 }
