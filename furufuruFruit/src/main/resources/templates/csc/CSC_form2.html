@@ -42,20 +42,23 @@
                 <!-- title end -->
 
                 <!-- Question form -->
-                <form class="Question"  method="post">
-                    
+
+                <form class="Question" th:action="@{/csc/inquiry}" th:object="${questionForm}"  method="post">
+  
 
                     <!-- subject -->
                     <div class="qs-info-subject">
                         <h3>제목</h1>
-                        <input type="text">
+                        <input type="text" th:field="*{title}">
                     </div>
                     <!-- subject end -->
 
                     <!-- content-->
                     <div class="qs-info-content">
                         <h4>내용</h4>
-                        <textarea></textarea>
+
+                        <textarea th:field="*{contents}"></textarea>
+
                     </div>
                     <!-- content end -->
 
