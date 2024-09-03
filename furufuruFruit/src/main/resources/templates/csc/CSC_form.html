@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="CSC.css">
+    <link rel="stylesheet" th:href="@{/csc/CSC.css}">
 </head>
-<body> 
+<body>
     <!-- Menu -->
     <header>
         <div class="menu">Menu</div>
@@ -36,8 +36,9 @@
             <div class="main-bar">
                 <!-- title -->
                 <div class="title">
-                    <h1>공지사항</h1>
+                    <h1>1:1문의하기</h1>
                     <span>새로운 소식 및 유용한 정보를 만나보실 수 있습니다</span>
+                    <a th:href="@{/csc/inquiry}">글쓰기</a> 
                 </div>
                 <!-- title end -->
 
@@ -45,28 +46,29 @@
                 <div class="contour">
                     <div>번호</div>
                     <div>제목</div>
-                    <div>작성자</div>
                     <div>작성일</div>
+                    <div>답변여부</div>
                 </div>
                 <!-- contour end -->
 
                 <!-- wrap content -->
                 <ul class="wrap-content">
-                    <li>
-                        <div>1</div>
-                        <div>[안내] 서비스 이용 약관안내</div>
-                        <div>관리자</div>
-                        <div>2024-08-26</div>
+                    <li th:each="question, loop : ${paging}">
+                        <div th:text="${paging.totalElements - (paging.number * paging.size) - loop.index}"></div>
+                        <a th:href="@{|/detail/${question.id}|}" th:text="${question.title}"></a> 
+                        <div th:text="${#temporals.format(question.createDate, 'yyyy-MM-dd HH:mm:ss')}"></div>
+                        <div></div>
                     </li>
                     <li>
-                        <div>2</div>
-                        <div>[공지] 홈페이지 이용에 대한 공지사항</div>
-                        <div>관리자</div>
+                        <div>1</div>
+                        <div>결제방법에 대해서 궁금한점이 있습니다.</div>
                         <div>2024-08-26</div>
+                        <div>Y</div>
                     </li>
                    
                 </ul>
                 <!-- wrap content end -->
+                
             </div>
             <!-- main bar end -->
             
