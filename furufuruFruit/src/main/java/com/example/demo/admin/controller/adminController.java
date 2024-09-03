@@ -1,5 +1,6 @@
 package com.example.demo.admin.controller;
 
+
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -13,9 +14,11 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
+
 public class adminController {
 	
 	private final adminService ar;
+
 
 	@GetMapping("/master")
 	public String start() {
@@ -37,4 +40,15 @@ public class adminController {
 		
 		return "admin/admin_sub_center";
 	}
+
+}
+
+@GetMapping("/admin_sub_center_detail")
+public String subCenterdetail() {
+
+	return "admin/admin_sub_center_detail";
+}
+
+
+
 }

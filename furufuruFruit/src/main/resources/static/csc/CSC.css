@@ -163,3 +163,16 @@ div[class="qs-info-content"] > textarea{
 form > div{
     margin-bottom: 50px;
 }
+
+div[class="title"] > a{
+    border: none;
+    background-color: rgb(255,192,0);
+    color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    margin-left: 600px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 50px;
+}
