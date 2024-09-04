@@ -11,8 +11,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.ServiceCenter.QuestionResponsitory;
-import com.example.demo.ServiceCenter.servicecenterquestion;
+import com.example.demo.Entity.servicecenterquestion;
+import com.example.demo.ServiceCenter.QuestionRepository;
+
 import com.example.demo.ServiceCenter.Exception.UserException;
 
 import lombok.RequiredArgsConstructor;
@@ -21,13 +22,13 @@ import lombok.RequiredArgsConstructor;
 @Service
 public class QuestionService {
 
-	private final QuestionResponsitory qr;
+	private final QuestionRepository qr;
 
 
 	
 	public Page<servicecenterquestion> getList(int page){
 		List<Sort.Order> sorts = new ArrayList<>();
-		sorts.add(Sort.Order.desc("createDate"));
+		sorts.add(Sort.Order.desc("questionDate"));
 		Pageable pageable = PageRequest.of(page, 10, Sort.by(sorts));
 		return this.qr.findAll(pageable);
 	}
@@ -51,7 +52,7 @@ public class QuestionService {
 		servicecenterquestion q = new servicecenterquestion();
 		q.setTitle(subject);
 		q.setContents(content);
-		q.setQuestion_date(LocalDateTime.now());
+		q.setQuestionDate(LocalDateTime.now());
 		this.qr.save(q);
 	}
 	

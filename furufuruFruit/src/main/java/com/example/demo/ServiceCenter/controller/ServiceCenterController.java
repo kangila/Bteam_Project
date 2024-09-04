@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.demo.Entity.servicecenterquestion;
 import com.example.demo.ServiceCenter.AnswerForm;
 import com.example.demo.ServiceCenter.QuestionForm;
-import com.example.demo.ServiceCenter.servicecenterquestion;
 import com.example.demo.ServiceCenter.Exception.UserException;
 import com.example.demo.ServiceCenter.Service.QuestionService;
 
@@ -29,7 +29,7 @@ public class ServiceCenterController {
 	@GetMapping("/csc")
 	public String SCenter(Model model, @RequestParam(value="page", defaultValue="0") int page) {
 		Page<servicecenterquestion> paging = this.qr.getList(page);
-		
+
 		model.addAttribute("paging", paging);
 		
 		return "csc/CSC_form";

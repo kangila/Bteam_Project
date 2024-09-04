@@ -38,7 +38,7 @@
                 <div class="title">
                     <h1>1:1문의하기</h1>
                     <span>새로운 소식 및 유용한 정보를 만나보실 수 있습니다</span>
-                    <a th:href="@{/csc/inquiry}">글쓰기</a> 
+                    <a th:href="@{csc/inquiry}">글쓰기</a> 
                 </div>
                 <!-- title end -->
 
@@ -53,18 +53,13 @@
 
                 <!-- wrap content -->
                 <ul class="wrap-content">
-                    <li th:each="question, loop : ${paging}">
+                    <li th:each="servicecenterquestion, loop : ${paging}">
                         <div th:text="${paging.totalElements - (paging.number * paging.size) - loop.index}"></div>
-                        <a th:href="@{|/detail/${question.id}|}" th:text="${question.title}"></a> 
-                        <div th:text="${#temporals.format(question.createDate, 'yyyy-MM-dd HH:mm:ss')}"></div>
+                        <a th:href="@{|/detail/${servicecenterquestion.cquestionId}|}" th:text="${servicecenterquestion.title}"></a> 
+                        <div th:text="${#temporals.format(servicecenterquestion.questionDate, 'yyyy-MM-dd HH:mm:ss')}"></div>
                         <div></div>
                     </li>
-                    <li>
-                        <div>1</div>
-                        <div>결제방법에 대해서 궁금한점이 있습니다.</div>
-                        <div>2024-08-26</div>
-                        <div>Y</div>
-                    </li>
+                    
                    
                 </ul>
                 <!-- wrap content end -->
