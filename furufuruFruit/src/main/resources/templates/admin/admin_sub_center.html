@@ -98,6 +98,8 @@
         section > #columnBox > span:nth-child(3) { width: 400px; }
         section > #columnBox > span:nth-child(4) { width: 150px; }
         section > #columnBox > span:nth-child(5) { width: 100px; text-align: center; }
+
+        
         /* section 구역 > Content 구역 */
         section > .contentRows {
             padding: 14px;
@@ -135,6 +137,9 @@
                 <input type="text" placeholder="글 제목을 입력해주세요.">
                 <button>검색</button>
             </div>
+            <div>
+                
+            </div>
             <div id="columnBox">
                 <span>번호</span>
                 <span>ID</span>
@@ -142,46 +147,37 @@
                 <span>등록날짜</span>
                 <span>답변여부</span>
             </div>
-            <div class="contentRows">
-                <span>1</span>
-                <span>user1</span>
-                <span>강아지 vs 고양이, 당신의 선택은..?</span>
-                <span>2024-07-21</span>
+            <div th:each="Servicecenterquestion, loop : ${paging}" class="contentRows">
+                <span th:text="${paging.totalElements - (paging.number * paging.size) - loop.index}"></span>
+                <span th:if="${Servicecenterquestion.id != null}" th:text="${Servicecenterquestion.id.username}"></span>
+                <span th:href="@{|/admin_sub_center/${Servicecenterquestion.id}|}" th:text="${Servicecenterquestion.title}"></span>
+                <span th:text="${#temporals.format(Servicecenterquestion.createDate, 'yyyy-MM-dd HH:mm:ss')}"></span>
                 <span>N</span>
             </div>
-            <div class="contentRows">
-                <span>2</span>
-                <span>hmg123</span>
-                <span>서울에서 가장 비싼 땅</span>
-                <span>2024-06-30</span>
-                <span>Y</span>
-            </div>
-            <div class="contentRows">
-                <span>3</span>
-                <span>three</span>
-                <span>이거 좋은 건가요? 이거 좋은 건가요? 이거 좋...</span>
-                <span>2024-06-28</span>
-                <span>N</span>
-            </div>
+            <!-- 페이징 버튼 -->
+            <div th:if="${!paging.isEmpty()}">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item" th:classappend="${!paging.hasPrevious} ? 'disabled'">
+                        <a class="page-link"
+                            th:href="@{|?page=${paging.number-1}|}">
+                            <span>이전</span>
+                        </a>
+                    </li>
+                    <li th:each="page: ${#numbers.sequence(1, paging.totalPages-1)}"
+                        th:if="${page >= paging.number-2 and page <= paging.number+2}"
+                        th:classappend="${page == paging.number} ? 'active'" 
+                        class="page-item">
+                        <a th:text="${page}" class="page-link" th:href="@{|?page=${page}|}"></a>
+                    </li>
+                    <li class="page-item" th:classappend="${!paging.hasNext} ? 'disabled'">
+                        <a class="page-link" th:href="@{|?page=${paging.number+1}|}">
+                            <span>다음</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>        
         </section>
     </div>
-    <script>
-        const navBtns = document.querySelectorAll(".navBtn");
-        const rows = document.querySelectorAll(".contentRows");
-
-        /* 왼쪽 네비 바 클릭했을 때 페이지 이동 */
-        navBtns[0].addEventListener('click', function(){
-            location.href = "admin_sub_user.html";
-        });
-        navBtns[1].addEventListener('click', function(){
-            location.href = "admin_sub_center.html";
-        });
-
-        /* 글의 레코드 클릭했을 때 페이지 이동 */
-        rows[0].addEventListener('click', function(){
-            location.href = "admin_sub_center_detail.html";
-        });
-
-    </script>
+    <script src="admin/admin_sub_center.js"></script>
 </body>
 </html>
