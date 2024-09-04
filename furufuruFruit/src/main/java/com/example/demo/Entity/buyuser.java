@@ -1,4 +1,4 @@
-package com.example.demo.admin.model;
+package com.example.demo.Entity;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -30,6 +30,6 @@ public class buyuser {
 	private String gender;
 	private LocalDateTime register_date;
 	
-	@OneToMany(mappedBy = "buyuser_id", cascade = CascadeType.REMOVE)
+	@OneToMany(mappedBy = "buyuser", cascade = CascadeType.REMOVE)
 	private List<servicecenterquestion> questionList;
 }

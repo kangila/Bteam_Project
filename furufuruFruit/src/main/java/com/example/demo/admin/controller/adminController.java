@@ -7,14 +7,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.example.demo.admin.model.servicecenterquestion;
+import com.example.demo.Entity.servicecenterquestion;
 import com.example.demo.admin.service.adminService;
 
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
-
 public class adminController {
 	
 	private final adminService ar;
@@ -41,7 +40,7 @@ public class adminController {
 		return "admin/admin_sub_center";
 	}
 
-}
+
 
 @GetMapping("/admin_sub_center_detail")
 public String subCenterdetail() {

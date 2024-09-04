@@ -60,7 +60,7 @@
                     <li th:each="question, loop : ${paging}">
                         <div th:text="${paging.totalElements - (paging.number * paging.size) - loop.index}"></div>
                         <a th:href="@{|/detail/${question.id}|}" th:text="${question.title}"></a> 
-                        <div th:text="${#temporals.format(question.createDate, 'yyyy-MM-dd HH:mm:ss')}"></div>
+                        <div th:text="${#temporals.format(question.question_date, 'yyyy-MM-dd HH:mm:ss')}"></div>
                         <div></div>
                     </li>
                     <li>

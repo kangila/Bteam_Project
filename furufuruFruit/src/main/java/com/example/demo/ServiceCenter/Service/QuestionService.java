@@ -11,8 +11,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.Entity.servicecenterquestion;
 import com.example.demo.ServiceCenter.QuestionResponsitory;
-import com.example.demo.ServiceCenter.servicecenterquestion;
+
 import com.example.demo.ServiceCenter.Exception.UserException;
 
 import lombok.RequiredArgsConstructor;
@@ -27,7 +28,7 @@ public class QuestionService {
 	
 	public Page<servicecenterquestion> getList(int page){
 		List<Sort.Order> sorts = new ArrayList<>();
-		sorts.add(Sort.Order.desc("createDate"));
+		sorts.add(Sort.Order.desc("question_date"));
 		Pageable pageable = PageRequest.of(page, 10, Sort.by(sorts));
 		return this.qr.findAll(pageable);
 	}

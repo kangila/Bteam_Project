@@ -5,8 +5,9 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.example.demo.Entity.servicecenterquestion;
 import com.example.demo.admin.model.servicecenterQuestionRepository;
-import com.example.demo.admin.model.servicecenterquestion;
+
 
 import lombok.RequiredArgsConstructor;
 
