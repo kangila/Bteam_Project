@@ -23,6 +23,7 @@ public class servicecenteranswer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer canswerId;
+
 	
 
 	private String contents;

@@ -24,11 +24,13 @@ public class servicecenterquestion {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer cquestionId;
+
 	
 	private String title;
 	
 	private String contents;
 	
+
 	private LocalDateTime questionDate;
 	
 	@ManyToOne

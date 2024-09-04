@@ -19,8 +19,7 @@ public class buyuser {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer buyuserId;
-	
+	private Integer buyuserId;	
 	private String id;
 	private String pw;
 	private String email;
@@ -28,6 +27,7 @@ public class buyuser {
 	private String tell;
 	private String address;
 	private String gender;
+
 	private LocalDateTime registerDate;
 	
 	@OneToMany(mappedBy = "buyuser", cascade = CascadeType.REMOVE)
