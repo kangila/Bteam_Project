@@ -29,7 +29,7 @@ public class ServiceCenterController {
 	@GetMapping("/csc")
 	public String SCenter(Model model, @RequestParam(value="page", defaultValue="0") int page) {
 		Page<servicecenterquestion> paging = this.qr.getList(page);
-		
+
 		model.addAttribute("paging", paging);
 		
 		return "csc/CSC_form";

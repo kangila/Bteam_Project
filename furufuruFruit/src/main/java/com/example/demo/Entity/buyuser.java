@@ -19,8 +19,7 @@ public class buyuser {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer buyuser_id;
-	
+	private Integer buyuserId;	
 	private String id;
 	private String pw;
 	private String email;
@@ -28,7 +27,8 @@ public class buyuser {
 	private String tell;
 	private String address;
 	private String gender;
-	private LocalDateTime register_date;
+
+	private LocalDateTime registerDate;
 	
 	@OneToMany(mappedBy = "buyuser", cascade = CascadeType.REMOVE)
 	private List<servicecenterquestion> questionList;

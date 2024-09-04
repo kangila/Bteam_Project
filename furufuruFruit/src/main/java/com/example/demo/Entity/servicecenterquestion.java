@@ -23,16 +23,18 @@ public class servicecenterquestion {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer cquestion_id;
+	private Integer cquestionId;
+
 	
 	private String title;
 	
 	private String contents;
 	
-	private LocalDateTime question_date;
+
+	private LocalDateTime questionDate;
 	
 	@ManyToOne
-	@JoinColumn(name="buyuser_id")
+	@JoinColumn(name="buyuserId")
 	private buyuser buyuser;
 	
 	

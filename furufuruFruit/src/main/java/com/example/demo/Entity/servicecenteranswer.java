@@ -22,15 +22,16 @@ public class servicecenteranswer {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer canswer_id;
+	private Integer canswerId;
+
 	
 
 	private String contents;
 
-	private LocalDateTime answer_date;
+	private LocalDateTime answerDate;
 	
 	@OneToOne
-	@JoinColumn(name="cquestion_id")
+	@JoinColumn(name="cquestionId")
 	private servicecenterquestion servicecenterquestion;
 
 	
