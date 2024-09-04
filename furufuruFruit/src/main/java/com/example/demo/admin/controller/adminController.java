@@ -19,6 +19,7 @@ public class adminController {
 
 	@GetMapping("/master")
 	public String start() {
+		//ㅁㅁㅁ
 		return "admin/admin_main";
 	}
 	
