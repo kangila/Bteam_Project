@@ -21,7 +21,7 @@ public class adminController {
 
 	@GetMapping("/master")
 	public String start() {
-		 
+		
 		return "admin/admin_main";
 	}
 	
@@ -42,12 +42,11 @@ public class adminController {
 	}
 
 
-
-@GetMapping("/admin_sub_center_detail")
-public String subCenterdetail() {
-
-	return "admin/admin_sub_center_detail";
-}
+	@GetMapping("/admin_sub_center_detail")
+	public String subCenterdetail() {
+	
+		return "admin/admin_sub_center_detail";
+	}
 
 
 
