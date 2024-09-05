@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" th:href="@{/login/login.css}">
 </head>
 <body> 
     <!-- Menu -->
@@ -24,7 +24,7 @@
            <!-- text-login end -->
             
         <!-- form -->
-        <form>
+        <form th:action="@{/user/login}">
         <!-- wrap input -->
         <div class="wrap-input">
            <!-- input id -->
@@ -49,7 +49,7 @@
            <!-- btn-login end  -->
            <div class="btn-signup">
                 <button type="button">
-                  <span>회원가입</span> 
+                  <div class="moveSignUp">회원가입</div > 
                </button>
            </div>
            <!-- btn-singup end  -->
@@ -73,5 +73,6 @@
 <!-- container end -->
     </section>
     <!-- main end -->
+     <script th:src="@{/login/login.js}"></script>
 </body>
 </html>
