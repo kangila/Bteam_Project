@@ -12,14 +12,15 @@ import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
+@Entity
 @Getter
 @Setter
-@Entity
-public class buyuser {
-	
+public class saleuser {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer buyuserId;	
+	private Integer saleuserId;
+	
 	private String id;
 	private String pw;
 	private String email;
@@ -27,9 +28,11 @@ public class buyuser {
 	private String tell;
 	private String address;
 	private String gender;
-
 	private LocalDateTime registerDate;
 	
-	@OneToMany(mappedBy = "buyuser", cascade = CascadeType.REMOVE)
-	private List<servicecenterquestion> questionList;
+	@OneToMany(mappedBy = "saleuser", cascade = CascadeType.REMOVE)
+	private List<product> productList;
+	
+	
+	
 }
