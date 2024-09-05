@@ -1,18 +1,9 @@
 package com.example.demo.admin.model;
 
-public class adminRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
 
-	
-	
-	//adminRepository 객체를 생성한 후 리포지토리의 findAll(), save() 메소드를 활용하여
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+import com.example.demo.Entity.buyuser;
+
+public interface adminRepository extends JpaRepository<buyuser, Integer> {
+
 }

@@ -1,14 +1,27 @@
 package com.example.demo.admin.service;
 
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.Entity.servicecenterquestion;
+import com.example.demo.admin.model.servicecenterQuestionRepository;
+
+
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+@Service
 public class adminService {
 
+	private final servicecenterQuestionRepository ar;
 	
-	
-	// adminRepository 객체를 생성한 후 리포지토리의 findAll(), save() 메소드를 활용하여
-	// 이런저런 데이터들을 불러오고 저장하는 것을 볼 수 있다.
-	
-//	어떤 데이터를 주고받고 할지 정해주는곳이 서비스 
-//	
-	
-	
+	public List<servicecenterquestion> getQustionList(){
+		//질문글 목록 모든 데이터를 가져오는 메소드
+		
+		List<servicecenterquestion> questionList = this.ar.findAll();
+		
+		return questionList;
+	}
 }

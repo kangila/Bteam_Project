@@ -1,56 +1,53 @@
 package com.example.demo.admin.controller;
 
+
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@Controller    // 1. 컨트롤러 생성 
+import com.example.demo.Entity.servicecenterquestion;
+import com.example.demo.admin.service.adminService;
 
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+@Controller
 public class adminController {
-
 	
+	private final adminService ar;
 
 
-	@GetMapping("/master") // 2. admin_main 페이지의 url 지정
-	
-	public String admaster() {
+	@GetMapping("/master")
+	public String start() {
 		
-	return "admin/admin_main"; // 3. master라는 주소로 접근시 뜨는 html 파일
-	
+		return "admin/admin_main";
 	}
 	
-	
-	
-	
-	@GetMapping("/admin_sub_user") // 1. admin_sub_user 페이지의 url 경로를 지정한다. 
-	public String admin_sub_center() {
+	@GetMapping("/admin/sub_user")
+	public String startSub() {
 		
-		return "admin/admin_sub_user";// 2. admin_user 주소로 접근했을 때 열린 html 파일을 호출.
-			}
+		return "admin/admin_sub_user";
+	}
 	
-
-@GetMapping("admin/admin_main")
-public String admin() {
-
-	return "admin/admin_sub_center";
-
-}
-
-
-@GetMapping("/admin_sub_center")
-public String adminsub() {
-	return "admin/admin_sub_center";
-}
+	@GetMapping("/admin/sub_center")
+	public String startSubCenter(Model model) {
+		
+		List<servicecenterquestion> questionList = this.ar.getQustionList();
+		
+		model.addAttribute("questionList", questionList);
+		
+		return "admin/admin_sub_center";
+	}
 
 
-@GetMapping("/admin_sub_center_detail")   // 
-public String subCenterdetail() {
-
-	return "admin/admin_sub_center_detail";
-
+	@GetMapping("/admin_sub_center_detail")
+	public String subCenterdetail() {
 	
+		return "admin/admin_sub_center_detail";
+	}
 
-				}
+
+
 }
-
-
-

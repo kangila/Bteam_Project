@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="CSC.css">
+    <link rel="stylesheet" th:href="@{/csc/CSC.css}">
 </head>
-<body> 
+<body>
     <!-- Menu -->
     <header>
         <div class="menu">Menu</div>
@@ -42,37 +42,28 @@
                 <!-- title end -->
 
                 <!-- Question form -->
-                <form class="Question" action="#">
-                    <!-- name  -->
-                    <div class="qs-info-name">
-                        <h3>이름</h3>
-                        <input type="text" />
-                    </div>
-                    <!-- name end -->
 
-                    <!-- tel -->
-                    <div class="qs-info-tel">
-                        <h3>연락처</h3>
-                        <input type="tel" onfocus="this.placeholder=''" maxlegth="13" oninput="autoHyphen(this)" pattern="010-[0-9]{3,4}-[0-9]{4}" placeholder="- 없이 숫자만 입력하세요" 
-                        id="tel" autocomplete="off" name="users_phone" onfocus="this.placeholder = ''" onblur="this.placeholder = '- 없이 숫자만 입력하세요'"/>
-                    </div>
-                    <!-- tel end -->
+                <form class="Question" th:action="@{/csc/inquiry}" th:object="${questionForm}"  method="post">
+  
 
                     <!-- subject -->
                     <div class="qs-info-subject">
                         <h3>제목</h1>
-                        <input type="text">
+                        <input type="text" th:field="*{title}">
                     </div>
                     <!-- subject end -->
 
                     <!-- content-->
                     <div class="qs-info-content">
                         <h4>내용</h4>
-                        <textarea name="" id=""></textarea>
+
+                        <textarea th:field="*{contents}"></textarea>
+
                     </div>
                     <!-- content end -->
 
-                    <button type="submit">문의하기</button>
+
+                    <button th:onclick="|location.href='@{/csc}'|" type="submit">문의하기</button>
                 </form>
                 <!-- Question form end -->
             </div>
