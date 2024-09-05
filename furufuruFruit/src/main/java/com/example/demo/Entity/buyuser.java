@@ -32,4 +32,6 @@ public class buyuser {
 	
 	@OneToMany(mappedBy = "buyuser", cascade = CascadeType.REMOVE)
 	private List<servicecenterquestion> questionList;
+	
+
 }

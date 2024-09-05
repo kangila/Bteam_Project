@@ -43,7 +43,7 @@ public class adminController {
 
 
 
-@GetMapping("/admin_sub_center_detail")
+@GetMapping("/admin/sub_center_detail")
 public String subCenterdetail() {
 
 	return "admin/admin_sub_center_detail";
