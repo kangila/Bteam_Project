@@ -49,3 +49,26 @@ function findAddr1(){
 
 
 }
+
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+  };
+}, true);
+
+const signupForm = document.querySelector("#signup-form");
+
+function signupSubmit(event) {
+  event.preventDefault();
+  console.log(event);
+}
+
+signupForm.addEventListener("submit", signupSubmit);
+
+let btn = document.querySelector(".signupbtn")
+const signUpFormBtn = document.signupForm.singUp;
+
+btn.addEventListener('click', function(){
+  document.getElementById('signup-form').submit();
+
+})

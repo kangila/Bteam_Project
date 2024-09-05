@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="signup.css">
-</head>
-<body> 
+
+   	<link rel="stylesheet" th:href="@{/signup/signup.css}">
+
     <!-- Menu -->
     <header>
       <div class="menu">Menu</div>
@@ -18,12 +12,13 @@
         <!-- container -->
         <div class="container">
         <!-- form -->
-        <form action="#">
+        <form id="signup-form" th:action="@{/user/signup}" th:object="${userCreateForm}" name="signUpForm">
+         <div th:replace="~{login/form_errors :: formErrorsFragment}"></div>
           <!-- member container -->
           <div class="member-container">
               <!-- member header -->
               <div class="header">
-                <div>회원 가입  을 위해</div>
+                <div>회원가입을 위해</div>
                 <div>정보를 입력해주세요</div>
               </div>
               <!-- member header -->
@@ -34,28 +29,28 @@
                 <!-- id  -->
                 <div class="user-info-id">
                   <div>* 아이디</div>
-                  <input type="text" />
+                  <input type="text" th:field="*{id}" />
                 </div>
                 <!-- id end -->
 
                 <!-- name  -->
                 <div class="user-info-name">
                   <div>* 이름</div>
-                  <input type="text" />
+                  <input type="text" th:field="*{name}" />
                 </div>
                 <!-- name end -->
 
                 <!-- pwd -->
                 <div class="user-info-pw">
                     <div>* 비밀번호</div>
-                    <input type="password" />
+                    <input type="password" th:field="*{pw}" />
                 </div>
                 <!-- pwd end -->
 
                 <!-- pwd check -->
                 <div class="user-info-pw-check">
                   <div>* 비밀번호 확인</div>
-                  <input type="password" />
+                  <input type="password" th:field="*{pw2}" />
                 </div>
                 <!-- pwd check end -->
               
@@ -63,7 +58,7 @@
                 <div class="user-info-email">
                   <div>* 이메일</div>
                   <div class="warp-input">
-                  <input type="text" name="email" id="email"/>
+                  <input type="text" name="email" id="email" th:field="*{email}"/>
                   <span>@</span>
                     <input class="box" id="domain-txt" type="text"/>
                     <select name="box" id="domain-list" type="text" class="box">
@@ -77,12 +72,12 @@
                 </div>
               </div>
                 <!-- email end -->
-               
+               	
                 <!-- tel -->
                 <div class="user-info-tel">
                   <div>* 전화번호</div>
-                  <input type="tel" onfocus="this.placeholder=''" maxlegth="13" oninput="autoHyphen(this)" pattern="010-[0-9]{3,4}-[0-9]{4}" placeholder="- 없이 숫자만 입력하세요" 
-                  id="tel" autocomplete="off" name="users_phone" onfocus="this.placeholder = ''" onblur="this.placeholder = '- 없이 숫자만 입력하세요'"/>
+                  <input type="tel" th:field="*{tell}" onfocus="this.placeholder=''" maxlegth="13" oninput="autoHyphen(this)" pattern="010-[0-9]{3,4}-[0-9]{4}" placeholder="- 없이 숫자만 입력하세요" 
+                  id="tel" autocomplete="off" name="users_phone"  onblur="this.placeholder = '- 없이 숫자만 입력하세요'"/>
                 </div>
                 <!-- tel end -->
 
@@ -91,11 +86,11 @@
                   <div>* 주소</div> 
                   <button id="btn-post" onclick="findAddr1()">찾아보기</button>
                   <br>
-                  <input id="member_post"  type="text" placeholder="우편번호" readonly>
+                  <input th:field="*{address}" id="member_post"  type="text" placeholder="우편번호" readonly>
                   <br>
-                  <input id="member_addr" type="text" placeholder="기본주소" readonly>
+                  <input th:field="*{address}" id="member_addr" type="text" placeholder="기본주소" readonly>
                   <br>
-                  <input id="member_addr_in" type="text" placeholder="상세주소를 입력하세요"  >
+                  <input th:field="*{address}" id="member_addr_in" type="text" placeholder="상세주소를 입력하세요"  >
                 </div>
 
               </div>
@@ -103,9 +98,9 @@
               
               <!-- gender -->
               <div class="gender">
-                  <input type="radio" name="gender" value="man" />
+                  <input th:field="*{gender}" type="radio" name=" " value="man" />
                   <label for="men">남성</label>
-                  <input type="radio" name="gender" value="girl"/>
+                  <input th:field="*{gender}" type="radio" name="gender" value="girl"/>
                   <label for="women">여성</label>
               </div>
               <!-- gender end -->
@@ -118,7 +113,7 @@
               <br>
               <!-- signup -->
               <div class="btn-signup">
-                <button type="submit">가입하기</button>
+                <button name="singUp" class="signupbtn">가입하기</button>
               </div>
               <!-- signup end -->
           </div>   
@@ -131,7 +126,7 @@
     </section>
     <!-- main end -->
      
-     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-     <script src="signup.js"></script>
-</body>
+     <script th:src="@{//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js}"></script>
+     <script th:src="@{/signup/signup.js}"></script>
+</div>
 </html>
