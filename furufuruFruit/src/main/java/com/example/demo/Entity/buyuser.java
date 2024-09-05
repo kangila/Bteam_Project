@@ -1,3 +1,4 @@
+
 package com.example.demo.Entity;
 
 import java.time.LocalDateTime;
@@ -32,6 +33,5 @@ public class buyuser {
 	
 	@OneToMany(mappedBy = "buyuser", cascade = CascadeType.REMOVE)
 	private List<servicecenterquestion> questionList;
-	
-
 }
+

@@ -1,3 +1,4 @@
+
 package com.example.demo.admin.controller;
 
 
@@ -48,6 +49,7 @@ public String subCenterdetail() {
 
 	return "admin/admin_sub_center_detail";
 }
+
 
 
 
