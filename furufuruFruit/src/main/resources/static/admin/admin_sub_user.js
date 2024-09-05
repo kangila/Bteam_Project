@@ -1,3 +1,4 @@
+
 const navBtns = document.querySelectorAll(".navBtn");
 const rows = document.querySelectorAll(".contentRows");
 
@@ -9,5 +10,6 @@ navBtns[0].addEventListener('click', function(){
 navBtns[1].addEventListener('click', function(){
     location.href = "/admin_sub_center.html";
 });
+
 
 
