@@ -2,10 +2,13 @@ package com.example.demo.Entity;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,10 +21,18 @@ public class cart {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer cartId;
 	
-	private Integer buyuserId;
-	private Integer productId;
+	@Column(nullable = false)
 	private Integer count;
+	
+	@Column(nullable = false)
 	private LocalDateTime cartDate;
 	
+	@ManyToOne
+	@JoinColumn(name = "productId")
+	private product product;
+	
+	@ManyToOne
+	@JoinColumn(name = "buyuserId")
+	private buyuser buyuser;
 	
 }
