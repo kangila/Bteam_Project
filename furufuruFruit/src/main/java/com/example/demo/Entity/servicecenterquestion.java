@@ -1,7 +1,6 @@
 package com.example.demo.Entity;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -11,7 +10,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,21 +23,26 @@ public class servicecenterquestion {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer cquestionId;
 
-	
+	@Column(nullable = false)
 	private String title;
 	
+	@Column(nullable = false)
 	private String contents;
 	
-
+	@Column(nullable = false)
 	private LocalDateTime questionDate;
 	
 	@ManyToOne
 	@JoinColumn(name="buyuserId")
 	private buyuser buyuser;
 	
-	
 	@OneToOne(mappedBy = "servicecenterquestion", cascade = CascadeType.REMOVE)
 	private servicecenteranswer servicecenteranswer;
 	
-	
 }
+
+
+
+
+
+

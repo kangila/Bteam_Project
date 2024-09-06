@@ -47,19 +47,21 @@ public class UserController {
 		try {
 			this.userService.create(userCreateForm.getId(),
 									userCreateForm.getPw(),
-									userCreateForm.getEmail(),
+									userCreateForm.getEmail1(),
+									userCreateForm.getEmail2(),
 									userCreateForm.getName(), 
 									userCreateForm.getTell(),
-									userCreateForm.getAddress(),
-									userCreateForm.getGender())
-					  ;
+									userCreateForm.getAddress1(),
+									userCreateForm.getAddress2(),
+									userCreateForm.getAddress3(),
+									userCreateForm.getGender());
 		} catch (DataIntegrityViolationException e) {
 			e.printStackTrace();
 			bindingResult.reject("signupFailed", "이미 등록된 사용자입니다.");
-			return "signup_form";
+			return "signup/signup_form";
 		}
 
-		return "redirect:/master";
+		return "redirect:/main";
 	}
 	
 }

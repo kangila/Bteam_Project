@@ -1,5 +1,7 @@
 package com.example.demo.User.form;
 
+import java.time.LocalDateTime;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
@@ -21,8 +23,10 @@ public class UserCreateForm {
 	private String pw2;
 	
 	@NotEmpty(message = "이메일은 필수항목 입니다.")
-	@Email
-	private String email;
+	private String email1;
+	
+	@NotEmpty(message = "이메일은 필수항목 입니다.")
+	private String email2;
 	
 	@NotEmpty(message = "이름은 필수항목 입니다.")
 	private String name;
@@ -31,10 +35,17 @@ public class UserCreateForm {
 	private String tell;
 	
 	@NotEmpty(message = "주소는 필수항목입니다")
-	private String address;
+	private String address1;
+	
+	@NotEmpty(message = "주소는 필수항목입니다")
+	private String address2;
+	
+	@NotEmpty(message = "주소는 필수항목입니다")
+	private String address3;
 	
 	@NotEmpty(message = "성별은 필수항목입니다")
 	private String gender;
+	
 	
 
 	

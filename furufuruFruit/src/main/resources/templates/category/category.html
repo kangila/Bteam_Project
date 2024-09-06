@@ -1,0 +1,75 @@
+<html layout:decorate="~{layout/layout}">
+<div layout:fragment="content">
+<style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+        
+        
+        .wrapper{
+          width: 1900px;
+
+       
+            }
+
+        h2{
+          width: 500px;
+          height: 100px;
+          position: relative;
+          left: 50px;
+
+            }
+
+        .goods-layout{
+          
+          /* 굿즈 height 자동 지정을 위해 존재  */
+        }
+
+        .row{
+          margin: 0px auto;
+          width: 1000px;
+        }
+        
+        .card{
+          height: 300px;
+          border: 4px solid rgb(0,142,211);
+        }    
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div>
+            
+              <p>
+                <br><h2>씁쓸한 떫음, 아삭 채소들!</h2>
+              </p>
+              <div class="goods-layout">
+
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+                  
+                 <div class="col">
+                 <div class="col" th:each="{question : ${paging}}"}>
+                    <div class="card" style="cursor: pointer;" onclick="location.href='#';">
+                      <img src="망고.jpg" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">
+                          [델몬트][무친당도] <br>
+                          육즙줄줄&nbsp;달콤&nbsp;망고
+                        </h5>
+                        <p class="card-text">
+                          50.000원
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+               
+            
+        </div>
+    </div>    
+    
+    
+</html>    
