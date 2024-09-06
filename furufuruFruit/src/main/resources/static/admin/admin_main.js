@@ -5,5 +5,5 @@ items[0].addEventListener('click', function(){
 });
 
     items[1].addEventListener('click', function(){
-    location.href = "/admin/sub_center";
+    location.href = "admin_sub_center.html";
 });

@@ -56,19 +56,20 @@ document.addEventListener('keydown', function(event) {
   };
 }, true);
 
-const signupForm = document.querySelector("#signup-form");
+const signupForm = document.querySelector("#signUpForm");
+const searchbtn = document.querySelector("#btn-post");
 
 function signupSubmit(event) {
   event.preventDefault();
   console.log(event);
 }
 
-signupForm.addEventListener("submit", signupSubmit);
+searchbtn.addEventListener("click", signupSubmit);
 
-let btn = document.querySelector(".signupbtn")
-const signUpFormBtn = document.signupForm.singUp;
+let btn = document.querySelector(".signupbtn");
+const signUpFormBtn = document.signUpForm;
 
 btn.addEventListener('click', function(){
-  document.getElementById('signup-form').submit();
+  document.signUpFormBtn.submit();
 
 })

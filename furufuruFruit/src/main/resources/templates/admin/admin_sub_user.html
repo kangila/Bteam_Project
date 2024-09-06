@@ -113,7 +113,7 @@
 </head>
 <body>
     <header>
-        <a th:href="@{/admin_main}">푸릇 푸릇 푸르트</a>
+        <a href="admin_main.html">푸릇 푸릇 푸르트</a>
     </header>
     <div id="container">
         <nav>
@@ -161,8 +161,15 @@
             </div>
         </section>
     </div>
+    <script>
+        const navBtns = document.querySelectorAll(".navBtn");
 
-    <script src="admin/admin_sub_user.js"></script>
-
+        navBtns[0].addEventListener('click', function(){
+            location.href = "admin_sub_user.html";
+        });
+        navBtns[1].addEventListener('click', function(){
+            location.href = "admin_sub_center.html";
+        });
+    </script>
 </body>
 </html>

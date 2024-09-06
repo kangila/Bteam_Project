@@ -54,7 +54,7 @@
                 <!-- contour end -->
 
                 <!-- wrap content -->
-                <ul class="wrap-content">
+                <ul class="wrap-content"> 
                     <li th:each="servicecenterquestion, loop : ${paging}">
                         <div th:text="${paging.totalElements - (paging.number * paging.size) - loop.index}"></div>
                         <a th:href="@{|/detail/${servicecenterquestion.cquestionId}|}" th:text="${servicecenterquestion.title}"></a> 

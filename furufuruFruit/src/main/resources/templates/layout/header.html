@@ -64,7 +64,8 @@
         }
 
         .search-bnticon {
-          height: 50px;
+		width: 50px;
+          height: 45px;
          position : absolute;
          background-color: green;
          border : 1px solid green;
@@ -130,7 +131,8 @@
       <nav class="wrap">
         <header>
           <a href="#">회원가입</a>
-          <a href="">로그인</a> 
+          <a sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a>
+          <a sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
         </header>
         <div class="top-bar">
             <div class="logo">

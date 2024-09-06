@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<html layout:decorate="~{layout/layout}">
+<div layout:fragment="content">
     <link rel="stylesheet" th:href="@{/login/login.css}">
-</head>
-<body> 
-    <!-- Menu -->
-    <header>
-        <div class="menu">Menu</div>
-    </header>
-    <!-- menu end -->
-     
      <!-- Main -->
     <section>
         <!-- container -->
         <div class="container">
+             <div th:if="${param.error}">
+            	<div>
+                사용자ID 또는 비밀번호를 확인해 주세요.
+            	</div>
+            </div>
             <!-- login text -->
            <div class="text-login">
                 <p>로그인</p>
@@ -24,18 +17,18 @@
            <!-- text-login end -->
             
         <!-- form -->
-        <form th:action="@{/user/login}">
+        <form id="loginform" th:action="@{/user/login}" method="post">
         <!-- wrap input -->
         <div class="wrap-input">
            <!-- input id -->
             <div class="input-id">
-                <input type="text" placeholder="아이디를 입력해주세요">
+                <input name="username" id="username" type="text" placeholder="아이디를 입력해주세요">
            </div>
            <!-- input id end  -->
             
            <!-- input pwd -->
            <div class="input-pwd">
-                <input type="password" placeholder="비밀번호를 입력해주세요">
+                <input name="password" id="password" type="password" placeholder="비밀번호를 입력해주세요">
            </div>
            <!-- input pwd end  -->
         </div>
@@ -74,5 +67,5 @@
     </section>
     <!-- main end -->
      <script th:src="@{/login/login.js}"></script>
-</body>
+</div>
 </html>
