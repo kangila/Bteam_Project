@@ -1,18 +1,12 @@
-
+<html layout:decorate="~{layout/layout}">
+<div layout:fragment="content">
    	<link rel="stylesheet" th:href="@{/signup/signup.css}">
-
-    <!-- Menu -->
-    <header>
-      <div class="menu">Menu</div>
-    </header>
-    <!-- menu end -->
-
      <!-- Main -->
     <section>
         <!-- container -->
-        <div class="container">
+        <div class="signupcontainer">
         <!-- form -->
-        <form id="signup-form" th:action="@{/user/signup}" th:object="${userCreateForm}" name="signUpForm">
+        <form id="signUpForm" th:action="@{/user/signup}" th:object="${userCreateForm}" name="signUpForm" method="post">
          <div th:replace="~{login/form_errors :: formErrorsFragment}"></div>
           <!-- member container -->
           <div class="member-container">
@@ -58,9 +52,9 @@
                 <div class="user-info-email">
                   <div>* 이메일</div>
                   <div class="warp-input">
-                  <input type="text" name="email" id="email" th:field="*{email}"/>
+                  <input type="text" name="email" id="email" th:field="*{email1}"/>
                   <span>@</span>
-                    <input class="box" id="domain-txt" type="text"/>
+                    <input class="box" id="domain-txt" type="text" th:field="*{email2}"/>
                     <select name="box" id="domain-list" type="text" class="box">
                       <option value="naver.com">naver.com</option>
                       <option value="google.com">google.com</option>
@@ -86,11 +80,11 @@
                   <div>* 주소</div> 
                   <button id="btn-post" onclick="findAddr1()">찾아보기</button>
                   <br>
-                  <input th:field="*{address}" id="member_post"  type="text" placeholder="우편번호" readonly>
+                  <input th:field="*{address1}" id="member_post"  type="text" placeholder="우편번호" readonly>
                   <br>
-                  <input th:field="*{address}" id="member_addr" type="text" placeholder="기본주소" readonly>
+                  <input th:field="*{address2}" id="member_addr" type="text" placeholder="기본주소" readonly>
                   <br>
-                  <input th:field="*{address}" id="member_addr_in" type="text" placeholder="상세주소를 입력하세요"  >
+                  <input th:field="*{address3}" id="member_addr_in" type="text" placeholder="상세주소를 입력하세요"  >
                 </div>
 
               </div>
@@ -123,8 +117,8 @@
     <!-- form end -->
 </div>
 <!-- container end -->
-    </section>
-    <!-- main end -->
+</section>
+<!-- main end -->
      
      <script th:src="@{//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js}"></script>
      <script th:src="@{/signup/signup.js}"></script>
