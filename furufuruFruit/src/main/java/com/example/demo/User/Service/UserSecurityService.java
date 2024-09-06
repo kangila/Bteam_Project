@@ -25,22 +25,25 @@ public class UserSecurityService implements UserDetailsService{
 	private final UserRepository userRepository;
 	
 	@Override
-	public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
-		Optional<buyuser> _buyuser = this.userRepository.findByName(name);
+		System.out.println(username);
+		Optional<buyuser> _buyuser = this.userRepository.findById(username);
 		if(_buyuser.isEmpty()) {
 			throw new UsernameNotFoundException("사용자가 존재하지 않습니다");
 		}
 		
 		buyuser buyuser = _buyuser.get();
+		System.out.println("???????????"+buyuser.getId());
+		System.out.println("???????????"+buyuser.getPw());
 		List<GrantedAuthority> auth = new ArrayList<>();
-		if("admin".equals(name)) {
+		if("admin".equals(username)) {
 			auth.add(new SimpleGrantedAuthority(UserRole.ADMIN.getValue()));
 		}else {
 			auth.add(new SimpleGrantedAuthority(UserRole.USER.getValue()));
 		}
 		
-		return new User(buyuser.getName(), buyuser.getPw(), auth);
+		return new User(buyuser.getId(), buyuser.getPw(), auth);
 	}
 	
 	

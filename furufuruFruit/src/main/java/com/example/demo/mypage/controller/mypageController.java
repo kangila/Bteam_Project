@@ -14,15 +14,9 @@ public class mypageController {
 	@GetMapping("/mypage/inquiry/products") // 상품 문의 페이지
 	public String showProductInquiryPage() {
 		
-	
-		
 		return "mypage/productinquiry"; // 상품 문의 HTML 파일 반환
-
-				
-
 		
-		
-				}
+	}
 	
 
 	
