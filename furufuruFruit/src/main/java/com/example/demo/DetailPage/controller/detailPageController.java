@@ -3,8 +3,12 @@ package com.example.demo.DetailPage.controller;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
+import com.example.demo.DetailPage.service.detailpageservice;
+import com.example.demo.Entity.product;
 
 import lombok.RequiredArgsConstructor;
 
@@ -12,17 +16,17 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class detailPageController {
 	
-	@GetMapping("/detail")
-	public String detail() {
+	private final detailpageservice dpR;
+	
+	@GetMapping("/detail{productId}")
+	public String detail(Model model, @PathVariable("id") Integer productId) {
+		product p = this.dpR.getprooduct(productId);
+		model.addAttribute("product", p);
+		
 		
 		return "detail_page/detailPage";
 	}
 	
-//	@GetMapping("/cart")
-//	public String cart() {
-//		
-//		return "cart/cart";
-//	}
 	
 
 
