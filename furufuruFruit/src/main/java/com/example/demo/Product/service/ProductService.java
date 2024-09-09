@@ -4,7 +4,8 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.Entity.product;
-import com.example.demo.productregist.ProductRepository;
+
+import com.example.demo.productregist.ProductregistRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -17,7 +18,7 @@ public class ProductService {
 
 	
 
-	private final ProductRepository productRepository;
+	private final ProductregistRepository productRepository;
 	
 	public product saveProduct(product product) {
 		return productRepository.save(product);
