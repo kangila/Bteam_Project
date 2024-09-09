@@ -1,5 +1,5 @@
 package com.example.demo.Entity;
-
+// 이순
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;

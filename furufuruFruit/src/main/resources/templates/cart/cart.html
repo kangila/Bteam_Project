@@ -1,42 +1,15 @@
+<!--이순-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" th:href="@{/cart/cart.css}">
 </head>
 <body>
     <div id="header">
-        <!--깔끔하게 정리-->
-        <!-- <div class="icon">
-            <div class="iconText join">회원가입</div>
-            <div class="iconText">|</div>
-            <div class="iconText login">로그인</div>
-            <div class="iconText">|</div>
-            <div class="iconCenter">고객센터</div>
-        </div>
-        <div class="serch">
-            <div class="logo">로고</div>
-            <div class="serchBar">
-                <input type="text" placeholder="검색어를 입력해주세요">
-                <div class="searchIcon">a</div>
-            </div>
-            <div class="cartIcon">
-                <div class="icons">카트</div>
-                <div class="icons">위시</div>
-            </div>
-        </div>
-        <div class="category">
-            <div class="menu">카테고리</div>
-            <div class="menuCenter">
-                <div class="menuBundle">신상품</div>
-                <div class="menuBundle">베스트</div>
-                <div class="menuBundle">알뜰</div>
-                <div class="menuBundle">특가</div>
-            </div>
-            <div class="menu">배송</div>
-        </div> -->
+
     </div>
 
     <!-- 메에에에에에에에에에이이이이이이이인-->
@@ -49,75 +22,30 @@
             <div class="cart">
                 <div class="cartCheck">
                     <div class="cartCheckLt">
-                        <!-- <div class="checkBox">ㅁ</div>
-                        <div class="CheckAll">전체선택</div> -->
-                        <input type="checkbox">전체선택
+                        <button>전체선택
                     </div>
-                    <!-- <div class="cartDelete">선택삭제</div> -->
                     <button>선택삭제</button>
                 </div>
                 <div class="cartList">
                     <div class="item">
                         <div class="itemCheck">
                             <input type="checkbox">
-                            <p>[브룩클린688]호주산 목초육 치마살 구이용 300g(냉장)</p>
+                            <!--<p>수제군침케이크</p>-->
+                            <p th:text="${product.name}">수제군침케이크</p>
                         </div>
                         <div class="itemInfor">
-                            <img src="../1000000642_detail_024.jpg" class="itemImg">
+                            <img th:src="@{/detail_page/x-mas_gunchimSSAK.jpg}" class="itemImg">
                             <div class="itemCount">
-                                <p>11,990원</p>
-                                <button>- 1 +</button>
+                                <!--<div th:text="${product.price}"><span>원</span></div>-->
+                                <div class="price"><span>9,724원</span></div> <!--nan이 뜨는데 마지막에 콤마 넣으면 됨-->
+                                <div class="countbtn">
+                                    <button class="plusbtn"> + </button>
+                                    <div><input type="text" style="width: 1.5rem;" class="p_num"></div>
+                                    <button class="minusbtn"> - </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="item">
-                        <div class="itemCheck">
-                            <input type="checkbox">
-                            <p>[브룩클린688]호주산 목초육 치마살 구이용 300g(냉장)</p>
-                        </div>
-                        <div class="itemInfor">
-                            <img src="../1000000642_detail_024.jpg" class="itemImg">
-                            <div class="itemCount">
-                                <p>11,990원</p>
-                                <button>- 1 +</button>
-                            </div>
-                    </div> -->
-                    <!-- <div class="item">
-                        <div class="itemCheck">
-                            <input type="checkbox">
-                            <p>[브룩클린688]호주산 목초육 치마살 구이용 300g(냉장)</p>
-                        </div>
-                        <div class="itemInfor">
-                            <img src="../1000000642_detail_024.jpg" class="itemImg">
-                            <div class="itemCount">
-                                <p>11,990원</p>
-                                <button>- 1 +</button>
-                            </div>
-                    </div>
-                    <div class="item">
-                        <div class="itemCheck">
-                            <input type="checkbox">
-                            <p>[브룩클린688]호주산 목초육 치마살 구이용 300g(냉장)</p>
-                        </div>
-                        <div class="itemInfor">
-                            <img src="../1000000642_detail_024.jpg" class="itemImg">
-                            <div class="itemCount">
-                                <p>11,990원</p>
-                                <button>- 1 +</button>
-                            </div>
-                    </div>
-                    <div class="item">
-                        <div class="itemCheck">
-                            <input type="checkbox">
-                            <p>[브룩클린688]호주산 목초육 치마살 구이용 300g(냉장)</p>
-                        </div>
-                        <div class="itemInfor">
-                            <img src="../1000000642_detail_024.jpg" class="itemImg">
-                            <div class="itemCount">
-                                <p>11,990원</p>
-                                <button>- 1 +</button>
-                            </div>
-                    </div> -->
                 </div>
             </div>
             <div class="cartRt">
@@ -125,7 +53,8 @@
                     <p class="payment">결제금액</p>
                     <div class="cartInline">
                         <p class="itemPrice">상품금액</p>
-                        <p class="itemPrice">50,000원</p>
+                        <!--<p th:text="${product.price}"><span>원</span></p>-->
+                        <p class="price"><span>9,724원</span></p>
                     </div>
                     <div class="cartInline">
                         <p class="sale text">상품할인금액</p>
@@ -138,7 +67,8 @@
                     </div>
                     <div class="cartInlineTotal">
                         <p class="total">결제예정금액</p>
-                        <p class="totalPrice">48,000원</p>
+                        <!--<p class="totalPrice"><span>원</span></p>-->
+                        <p class="totalPrice"><span>12,724원</span></p>
                     </div>
                     <div class="cupon">쿠폰/적립금은 주문서에서 사용 가능합니다</div>
                 </div>
@@ -173,5 +103,6 @@
     <div id="footer">
         <!-- <div class="footerText">풋터들~</div> -->
     </div>
+    <script th:src="@{/cart/cart.js}"></script>
 </body>
 </html>

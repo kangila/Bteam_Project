@@ -23,7 +23,7 @@ public class MainController {
 	
 	@GetMapping("/main")
 	public String main(Model model) {
-		
+
 	
 		List<product> Alllist = this.mr.findAll();		
 		model.addAttribute("productList", Alllist);
@@ -32,5 +32,6 @@ public class MainController {
 		
 	}
 		
+
 	
 }

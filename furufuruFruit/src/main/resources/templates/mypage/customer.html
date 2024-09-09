@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>푸릇푸릇 푸르츠</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" th:href="@{/mypage/style.css}">
 </head>
 <body>
     <header class="header">
@@ -47,15 +47,16 @@
         <aside class="sidebar">
             <h2>자주 찾는 메뉴</h2>
             <ul>
-                <li><a href="#" >주문 내역</a></li>
+                <li><a href="/mypage/order">주문 내역</a></li>
                 <li><a href="#" >찜한 상품</a></li>
+                 <li><a href="#" >자주 구매</a></li>
                
             </ul>
             <hr>    <!--가로선으로 나누기 위함-->
             <h2>쇼핑</h2>
             <ul>
                 <li><a href="#">상품 후기</a></li>
-                <li><a href="#">상품 문의</a></li>
+                <li><a th:href="@{/mypage/inquiry/products}">상품 문의</a></li>
                 <li><a href="#">장바구니</a></li>
             </ul>
             <hr>    <!--가로선으로 나누기 위함 -->
@@ -104,10 +105,8 @@
                                 </div>
                             </div>
                         </div>
-                        
-              
+                         
             </div>
         </main>
-
 </body>
 </html>

@@ -1,3 +1,4 @@
+// 남동현 
 package com.example.demo.mypage.controller;
 
 import org.springframework.stereotype.Controller;
