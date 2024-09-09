@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import com.example.demo.Entity.buyuser;
 import com.example.demo.User.UserRole;
 import com.example.demo.User.Repository.UserRepository;
+import com.example.demo.User.form.UserCreateForm;
 
 import lombok.RequiredArgsConstructor;
 
@@ -39,10 +40,13 @@ public class UserSecurityService implements UserDetailsService{
 		List<GrantedAuthority> auth = new ArrayList<>();
 		if("admin".equals(username)) {
 			auth.add(new SimpleGrantedAuthority(UserRole.ADMIN.getValue()));
-		}else {
+		}else if("saleuser".equals(buyuser.getRole())){
+			auth.add(new SimpleGrantedAuthority(UserRole.SALEUSER.getValue()));
 			auth.add(new SimpleGrantedAuthority(UserRole.USER.getValue()));
 		}
-		
+		else {
+			auth.add(new SimpleGrantedAuthority(UserRole.USER.getValue()));
+		}
 		return new User(buyuser.getId(), buyuser.getPw(), auth);
 	}
 	

@@ -54,7 +54,8 @@ public class UserController {
 									userCreateForm.getAddress1(),
 									userCreateForm.getAddress2(),
 									userCreateForm.getAddress3(),
-									userCreateForm.getGender());
+									userCreateForm.getGender(),
+									userCreateForm.getRole());
 		} catch (DataIntegrityViolationException e) {
 			e.printStackTrace();
 			bindingResult.reject("signupFailed", "이미 등록된 사용자입니다.");

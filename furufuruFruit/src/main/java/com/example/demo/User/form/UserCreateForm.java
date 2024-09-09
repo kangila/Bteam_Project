@@ -46,7 +46,8 @@ public class UserCreateForm {
 	@NotEmpty(message = "성별은 필수항목입니다")
 	private String gender;
 	
-	
+	@NotEmpty(message = "유저정보는 필수항목입니다")
+	private String role;
 
 	
 }
