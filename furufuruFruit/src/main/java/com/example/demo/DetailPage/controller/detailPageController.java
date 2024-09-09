@@ -18,9 +18,9 @@ public class detailPageController {
 	
 	private final detailpageservice dpR;
 	
-	@GetMapping("/detail{productId}")
-	public String detail(Model model, @PathVariable("id") Integer productId) {
-		product p = this.dpR.getprooduct(productId);
+	@GetMapping(value = "/detailpage/{productId}")
+	public String detail(Model model, @PathVariable(value = "productId") Integer productId) {
+		product p = this.dpR.getproduct(productId);
 		model.addAttribute("product", p);
 		
 		

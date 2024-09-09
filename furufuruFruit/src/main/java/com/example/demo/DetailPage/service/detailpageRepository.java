@@ -1,4 +1,4 @@
-package com.example.demo.admin.model;
+package com.example.demo.DetailPage.service;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
