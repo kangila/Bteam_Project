@@ -8,6 +8,10 @@ public class FurufuruFruitApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(FurufuruFruitApplication.class, args);
+	
+		
+	
+	
 	}
 
 }

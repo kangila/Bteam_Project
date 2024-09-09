@@ -21,7 +21,7 @@
         
           }
 
-
+			
 /* ------------------탑 바 파트(로고, 서치바, 쇼핑, 마이페이지)---------------------------- */
 
         .top-bar{
@@ -51,7 +51,7 @@
 
         .search {
            position: relative;
-           width: 500px;
+           width: 350px;
            
         }
 
@@ -82,6 +82,10 @@
           text-decoration: none;
             color: green;
           
+        }
+        /* 0906 로고css 추가 [민준호]*/
+        .logo{
+		      cursor: pointer;
         }
 /* ------------------네비게이션 파트 (카테고리, 신상품, 베스트, 이벤트)---------------------------- */       
 
@@ -130,9 +134,11 @@
     <div class="wrapper">
       <nav class="wrap">
         <header>
-          <a href="#">회원가입</a>
           <a sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a>
           <a sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
+          <a sec:authorize="isAnonymous()" th:href="@{/user/signup}">회원가입</a>
+          <a sec:authorize="isAuthenticated()" th:href="@{/user/signup}" hidden>회원가입</a>
+          <a sec:authorize="hasRole('ROLE_SALEUSER')" href="#">판매등록</a>
         </header>
         <div class="top-bar">
             <div class="logo">
@@ -140,7 +146,7 @@
             </div>
             <form th:action="@{/searchproduct}" method="get">
               <div class="search">
-               <input type="text" placeholder="검색어를 입력하세요."> 
+               <input type="text" name="keyword" placeholder="검색어를 입력하세요."> 
                <button class="search-bnticon" type="submit">
                 <i class="fa-solid fa-magnifying-glass"></i>
                </button>
@@ -148,8 +154,9 @@
             </form>
             <span class="shopping-mypage">
              <a href="#">장바구니</a>
-             <a href="#">마이페이지</a>
              <a href="/csc">고객센터</a>
+             <a sec:authorize="isAnonymous()"href="#" hidden>마이페이지</a>
+             <a sec:authorize="isAuthenticated()" href="#">마이페이지</a>
             </span>   
         </div>
                                             <!--- 네비게이션 바 -->
@@ -181,3 +188,4 @@
         <div>
       </nav>
 </nav>
+<script th:src="@{/layout/header.js}"></script>
