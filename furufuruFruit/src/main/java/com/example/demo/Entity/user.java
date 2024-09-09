@@ -16,7 +16,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class buyuser {
+public class user {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,6 +45,9 @@ public class buyuser {
 
 	@Column(nullable = false)
 	private LocalDateTime registerDate;
+	
+	@Column(nullable = false)
+	private String role;
 	
 	@OneToMany(mappedBy = "buyuser", cascade = CascadeType.REMOVE)
 	private List<cart> cartList;

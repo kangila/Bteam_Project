@@ -34,7 +34,7 @@ public class servicecenterquestion {
 	
 	@ManyToOne
 	@JoinColumn(name="buyuserId")
-	private buyuser buyuser;
+	private user buyuser;
 	
 	@OneToOne(mappedBy = "servicecenterquestion", cascade = CascadeType.REMOVE)
 	private servicecenteranswer servicecenteranswer;

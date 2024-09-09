@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.Entity.buyuser;
+import com.example.demo.Entity.user;
 import com.example.demo.User.Exception.UserException;
 import com.example.demo.User.Repository.UserRepository;
 
@@ -23,9 +23,9 @@ public class UserService {
 	private final PasswordEncoder passwordEncoder;
 	
 	
-	public buyuser create(String id,String pw,String email1,String email2, String name, String tell, String address1,String address2,String address3,String gender) {
+	public user create(String id,String pw,String email1,String email2, String name, String tell, String address1,String address2,String address3,String gender, String role) {
 		
-		buyuser user = new buyuser();
+		user user = new user();
 		user.setId(id);
 		user.setPw(passwordEncoder.encode(pw));
 		user.setEmail(email1+"@"+email2);
@@ -34,14 +34,16 @@ public class UserService {
 		user.setAddress(address1+" "+address2+" "+address3);
 		user.setGender(gender);
 		user.setRegisterDate(LocalDateTime.now());
+		user.setRole(role);
+		
 		
 		this.userRepository.save(user);
 		return user;
 		
 	}
 	
-	public buyuser getUser(String id) throws UserException {
-		Optional<buyuser> buyuser = this.userRepository.findById(id);
+	public user getUser(String id) throws UserException {
+		Optional<user> buyuser = this.userRepository.findById(id);
 		if(buyuser.isPresent()) {
 			return buyuser.get();
 		}

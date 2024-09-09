@@ -2,8 +2,8 @@ package com.example.demo.admin.model;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.demo.Entity.buyuser;
+import com.example.demo.Entity.user;
 
-public interface adminRepository extends JpaRepository<buyuser, Integer> {
+public interface adminRepository extends JpaRepository<user, Integer> {
 
 }
