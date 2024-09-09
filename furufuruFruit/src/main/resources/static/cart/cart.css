@@ -1,3 +1,4 @@
+/*이순*/
 *{
     /* border: 3px solid RGB(255,192,0); */
     margin: 0;
@@ -162,7 +163,7 @@ input::placeholder{
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    width: 550px;
+    width: 560px;
     background-color: aliceblue;
     border-radius: 5px;
 }
@@ -171,26 +172,38 @@ input::placeholder{
 }
 /*물건 리스트 구역만 나누고 디테일 안함*/
 .item{
-    height: 80px;
-    margin: 10px 0;
+    height: 100px;
+    margin: 18px 0;
     background-color: aliceblue;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .itemCheck{
     display: flex;
-    padding-left: 18px;
+    width: 300px;
+    margin: 0 10px;
 }
+input{
+    margin-right: 10px;
+}
+
 .itemInfor{
     display: flex;
-    padding-left: 35px;
+    padding-left: 15px;
+    justify-content: space-evenly;
+    width:300px;
 }
 .itemImg{
-    width: 10%;
-    height: 10%;
+    width: 30%;
     border-radius: 10px;
 }
 .itemCount{
-    margin-left: 15px;
+    margin: 15px;
+}
+.countbtn{
+    display: flex;
 }
 .cartRt{
     margin-left: 10px;

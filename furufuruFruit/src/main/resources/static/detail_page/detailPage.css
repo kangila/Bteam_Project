@@ -1,3 +1,4 @@
+/*이순*/
 *{
     /* border: 3px solid black; */
     /* margin: auto; */
@@ -94,15 +95,25 @@ img{
     display: flex;
 }
 
+.wishbtn.act{
+    background-color: RGB(255,192,0);
+    color: aliceblue;
+    border: none;
+    width: 50px;
+    height: 50px;
+}
 .wishbtn{
-    color: RGB(255,192,0);
+    background-color: gray;
+    color: aliceblue;
+    width: 50px;
+    height: 50px;
 }
 
 .cartbtn{
-    width: 300px;
+    width: 400px; 
+    height: 50px;
     background-color: RGB(255,192,0);
 }
-
 
 
 
