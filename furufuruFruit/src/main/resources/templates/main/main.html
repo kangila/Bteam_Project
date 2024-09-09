@@ -175,117 +175,20 @@
 
           <div class="row row-cols-1 row-cols-md-4 g-4">
             
-            <div class="col">
-              <div class="card" style="cursor: pointer;" onclick="location.href='#';">
-                <img src="/main/망고.jpg" class="card-img-top" alt="...">
+            <div class="col" th:each="product : ${productList}">
+             <div class="card" style="cursor: pointer;" onclick="location.href='#';">
+                <img th:src="${product.path}" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">
-                    [델몬트][무친당도] <br>
-                    육즙줄줄&nbsp;달콤&nbsp;망고
+                  <h5 class="card-title" th:text="'[상품명] '+${product.name}">
                   </h5>
-                  <p class="card-text">
-                    50.000원
+                  <p class="card-text" th:text="${product.price} + '원'">
+                  </p>
+                  <p th:text="${product.explan}">
                   </p>
                 </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="card" style="cursor: pointer;" onclick="location.href='#';">
-                <img src="/main/망고.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    [델몬트][무친당도] <br>
-                    육즙줄줄&nbsp;달콤&nbsp;망고
-                  </h5>
-                  <p class="card-text">
-                    50.000원
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card" style="cursor: pointer;" onclick="location.href='#';">
-                <img src="/main/망고.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    [델몬트][무친당도] <br>
-                    육즙줄줄&nbsp;달콤&nbsp;망고
-                  </h5>
-                  <p class="card-text">
-                    50.000원
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card" style="cursor: pointer;" onclick="location.href='#';">
-                <img src="/main/망고.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    [델몬트][무친당도] <br>
-                    육즙줄줄&nbsp;달콤&nbsp;망고
-                  </h5>
-                  <p class="card-text">
-                    50.000원
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card" style="cursor: pointer;" onclick="location.href='#';">
-                <img src="/main/망고.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    [델몬트][무친당도] <br>
-                    육즙줄줄&nbsp;달콤&nbsp;망고
-                  </h5>
-                  <p class="card-text">
-                    50.000원
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card" style="cursor: pointer;" onclick="location.href='#';">
-                <img src="/main/망고.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    [델몬트][무친당도] <br>
-                    육즙줄줄&nbsp;달콤&nbsp;망고
-                  </h5>
-                  <p class="card-text">
-                    50.000원
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card" style="cursor: pointer;" onclick="location.href='#';">
-                <img src="/main/망고.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    [델몬트][무친당도] <br>
-                    육즙줄줄&nbsp;달콤&nbsp;망고
-                  </h5>
-                  <p class="card-text">
-                    50.000원
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card" style="cursor: pointer;" onclick="location.href='#';">
-                <img src="/main/망고.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">
-                    [델몬트][무친당도] <br>
-                    육즙줄줄&nbsp;달콤&nbsp;망고
-                  </h5>
-                  <p class="card-text">
-                    50.000원
-                  </p>
-                </div>
-              </div>
+           
+            
             </div>
 
 
@@ -293,8 +196,10 @@
               </div>
             </div>
           </div>
+
     	
 		 <script src="/main/bootstrap.min.js"></script>
         </div>
         </html> 
         
+

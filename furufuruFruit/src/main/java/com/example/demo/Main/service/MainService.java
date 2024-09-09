@@ -38,9 +38,7 @@ public class MainService {
 //				return null;
 //	
 	
-	public List<product> search(String keyword){
-	      return this.mr.findByNameContaining(keyword);
-	   }	
+		
 	
 	
 	

@@ -9,7 +9,7 @@ import com.example.demo.Entity.product;
 
 
 	public interface MainRepository extends JpaRepository<product, Integer>{
-		List<product> findByNameContaining(String keyword);
+		
 	}	
 	
 	
