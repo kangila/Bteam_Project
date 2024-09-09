@@ -23,7 +23,7 @@ public class UserService {
 	private final PasswordEncoder passwordEncoder;
 	
 	
-	public buyuser create(String id,String pw,String email1,String email2, String name, String tell, String address1,String address2,String address3,String gender) {
+	public buyuser create(String id,String pw,String email1,String email2, String name, String tell, String address1,String address2,String address3,String gender, String role) {
 		
 		buyuser user = new buyuser();
 		user.setId(id);
@@ -34,6 +34,8 @@ public class UserService {
 		user.setAddress(address1+" "+address2+" "+address3);
 		user.setGender(gender);
 		user.setRegisterDate(LocalDateTime.now());
+		user.setRole(role);
+		
 		
 		this.userRepository.save(user);
 		return user;

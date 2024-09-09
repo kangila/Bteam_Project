@@ -99,6 +99,15 @@
               </div>
               <!-- gender end -->
 
+              <!-- userinfo -->
+              <div class="userinfo">
+                <input th:field="*{role}" type="radio" name="role" value="buyuser" />
+                <label for="buyuser">구매자</label>
+                <input th:field="*{role}" type="radio" name="role" value="saleuser"/>
+                <label for="saleuser">판매자</label>
+              </div>
+              <!-- userinfo end -->
+
               <!-- agree -->
               <div class="agree-check">
                 <input type="checkbox"> 이용약관 개인정보 수집 및 이용, 마케팅 활용 선택에 모두 동의합니다.
