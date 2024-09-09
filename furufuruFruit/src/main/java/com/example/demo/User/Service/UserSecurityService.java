@@ -12,7 +12,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.Entity.user;
+import com.example.demo.Entity.buyuser;
 import com.example.demo.User.UserRole;
 import com.example.demo.User.Repository.UserRepository;
 import com.example.demo.User.form.UserCreateForm;
@@ -29,12 +29,12 @@ public class UserSecurityService implements UserDetailsService{
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		// TODO Auto-generated method stub
 		System.out.println(username);
-		Optional<user> _buyuser = this.userRepository.findById(username);
+		Optional<buyuser> _buyuser = this.userRepository.findById(username);
 		if(_buyuser.isEmpty()) {
 			throw new UsernameNotFoundException("사용자가 존재하지 않습니다");
 		}
 		
-		user buyuser = _buyuser.get();
+		buyuser buyuser = _buyuser.get();
 		System.out.println("???????????"+buyuser.getId());
 		System.out.println("???????????"+buyuser.getPw());
 		List<GrantedAuthority> auth = new ArrayList<>();

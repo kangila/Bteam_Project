@@ -33,6 +33,6 @@ public class cart {
 	
 	@ManyToOne
 	@JoinColumn(name = "buyuserId")
-	private user buyuser;
+	private buyuser buyuser;
 	
 }

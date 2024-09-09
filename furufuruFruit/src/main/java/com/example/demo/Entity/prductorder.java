@@ -34,7 +34,7 @@ public class prductorder {
 	
 	@ManyToOne
 	@JoinColumn(name = "buyuserId")
-	private user buyuser;
+	private buyuser buyuser;
 	
 	@ManyToOne
 	@JoinColumn(name = "productId")
