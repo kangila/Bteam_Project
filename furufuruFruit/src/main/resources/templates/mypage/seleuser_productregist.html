@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="seleuser_productregist.css">
+    <link rel="stylesheet" th:href="@{/mypage/seleuser_productregist.css}">
+    
 </head>
 <body>
     <header class="header">
@@ -46,14 +47,14 @@
         <aside class="sidebar">
             <h2>상품관리</h2>
             <ul>
-                <li><a href="#" >상품 문의 </a></li>
-                <li><a href="#" >상품 등록 </a></li>
-                <li><a href="#" >상품 조회/수정 </a></li>
+                <li><a th:href="@{/mypage/Sellmypage/inquiry}" >상품 문의 </a></li>
+                <li><a th:href="@{/mypage/Sellmypage}" >상품 등록 </a></li>
+                <li><a th:href="@{/mypage/Sellmypage/updatecheck}" >상품 조회/수정 </a></li>
             </ul>
             <hr>    <!--가로선으로 나누기 위함-->
             <h2>주문/배송</h2>
             <ul>
-                <li><a href="#">주문내역</a></li>
+                <li><a th:href="@{/mypage/Sellmypage/orderdetail}">주문내역</a></li>
                
             </ul>
             <hr>    <!--가로선으로 나누기 위함 -->
@@ -67,6 +68,7 @@
             <h3>상품 등록</h3>
             <div class="line"></div>
             <div id="content-itemBox">
+             <form id="product-form" action="/products" method="post" enctype="multipart/form-data">
                 <div class="content-item">
                     <h4>상품명</h4>
                     <input type="text" id="product-name" placeholder="상품명 입력">
@@ -104,7 +106,7 @@
                     <textarea name="" id="product-explan" placeholder="상품의 상세설명을 입력해주세요."></textarea>
                 </div>
             </div>
-        </main>
+        </main>        
     </div>
 </body>
 </html>

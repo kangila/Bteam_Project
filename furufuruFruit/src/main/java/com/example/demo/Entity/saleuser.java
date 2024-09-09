@@ -49,4 +49,6 @@ public class saleuser {
 	@OneToMany(mappedBy = "saleuser", cascade = CascadeType.REMOVE)
 	private List<product> productList;
 	
+	
+	
 }
