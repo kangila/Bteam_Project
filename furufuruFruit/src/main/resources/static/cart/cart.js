@@ -1,29 +1,4 @@
-// 0906 이순
-// var wishbtn = document.querySelector(".wishbtn");
-// wishbtn.onclick = function(){
-//     alert("위시리스트에 추가했습니다.");
-// }
-
-
-
-
-function toggleAct (button) {
-        button.classList.toggle("act");
-  };
-  
-  
-// wishbtn.asddEventListener('click', wishbtn);       
-
-
-var cartbtn = document.querySelector(".cartbtn");
-cartbtn.addEventListener('click', function(){
-	alert("장바구니에 추가했습니다.");
-    location.href = "/cart/{cartId}/{productId}"; // 장바구기 클릭시 장바구니 이동
-});
-
-
-
-
+// 이순
 
 //
 // --------- 경빈님 압도적 감사 ---------
@@ -46,9 +21,9 @@ let price = document.querySelector(".price").innerText;
 // 수량 변동
 p_num.value = num;
 // 금액 변동
-sumPrice.innerText = price;
+totalPrice.innerText = price;
 
-// 수량 감소시 금액과 개수 증가
+// 수량 감소시 금액과 갯수 증가
 minusbtn.addEventListener('click',function(){
 
 
@@ -57,30 +32,21 @@ minusbtn.addEventListener('click',function(){
     }
     else if(num > 1){
         num = num - 1;
-        p_num.value = num; // num-1을 대입
-        sumPrice.innerText = price*num;
+        p_num.value = num; // num-1을 할당
+        totalPrice.innerText = price * num + 3000; 
     }
 
 });
 
-// 수량 추가시 금액과 개수 감소
+// 수량 추가시 금액과 갯수 감소
 plusbtn.addEventListener('click',function(){
     num = num + 1;
     p_num.value = num; // num+1을 대입
-    totalPrice.innerText = price*num;
+    totalPrice.innerText = price * num + 3000;
 
 });
-    
 
 
-
-
-
-
-
- 
- 
- 
 
 //  // 숫자 3자리 콤마찍기
 // Number.prototype.formatNumber = function(){
@@ -90,7 +56,3 @@ plusbtn.addEventListener('click',function(){
 //     while (regex.test(nstr)) nstr = nstr.replace(regex, '$1' + ',' + '$2');
 //     return nstr;
 // };
-      
-    
-    
-    

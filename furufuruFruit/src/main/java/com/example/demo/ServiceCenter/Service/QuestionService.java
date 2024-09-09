@@ -23,8 +23,6 @@ public class QuestionService {
 
 	private final QuestionRepository qr;
 
-
-	
 	public Page<servicecenterquestion> getList(int page){
 		List<Sort.Order> sorts = new ArrayList<>();
 		sorts.add(Sort.Order.desc("questionDate"));
@@ -34,17 +32,12 @@ public class QuestionService {
 	}
 	
 	public servicecenterquestion getQuestion(Integer id) throws UserException {
-		// 도전과제
-		// 존재하지 않는 데이터를 조회할떄는
-		// 데이터를 찾을수 없습니다 라는
-		// PpakchimException을 구현해볼것.
 		Optional<servicecenterquestion> q1 = this.qr.findById(id);
 		if(q1.isPresent()) {
 			return q1.get();
 		}else {
 			throw new UserException("데이터를 찾을수 없습니다");
 		}
-		
 	}
 
 	public void create(String subject, String content) {
@@ -54,6 +47,16 @@ public class QuestionService {
 		q.setContents(content);
 		q.setQuestionDate(LocalDateTime.now());
 		this.qr.save(q);
+	}
+
+	public void modify(servicecenterquestion q, String title, String contents) {
+		q.setTitle(title);
+		q.setContents(contents);
+		this.qr.save(q);
+	}
+
+	public void delete(servicecenterquestion q) {
+		this.qr.delete(q);
 	}
 	
 }

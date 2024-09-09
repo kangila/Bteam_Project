@@ -46,6 +46,9 @@ public class buyuser {
 	@Column(nullable = false)
 	private LocalDateTime registerDate;
 	
+	@Column(nullable = false)
+	private String role;
+	
 	@OneToMany(mappedBy = "buyuser", cascade = CascadeType.REMOVE)
 	private List<cart> cartList;
 	
