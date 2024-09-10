@@ -20,7 +20,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
-public class ServiceCenterController {
+public class ServiceCenterController {  
 	
 	private final QuestionService qr;
 	
