@@ -36,7 +36,7 @@ public class productanswer {
 	private productquestion productquestion;
 	
 	@ManyToOne
-	@JoinColumn(name = "saleuserId")
-	private saleuser saleuser;
+	@JoinColumn(name = "buyuserId")
+	private buyuser buyuser;
 	
 }

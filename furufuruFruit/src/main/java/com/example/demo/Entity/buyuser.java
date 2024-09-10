@@ -22,19 +22,19 @@ public class buyuser {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer buyuserId;	
 	
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true)
 	private String id;
 	
 	@Column(nullable = false)
 	private String pw;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true)
 	private String email;
 	
 	@Column(nullable = false)
 	private String name;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true)
 	private String tell;
 	
 	@Column(nullable = false)
