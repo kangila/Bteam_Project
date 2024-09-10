@@ -10,5 +10,5 @@ import com.example.demo.Entity.servicecenterquestion;
 
 public interface QuestionRepository extends JpaRepository<servicecenterquestion, Integer>{
 	Page<servicecenterquestion> findAll(Pageable pageable);
-	Page<servicecenterquestion> findByBuyuserId(buyuser user, Pageable pageable);
+	Page<servicecenterquestion> findByBuyuser(buyuser buyuser, Pageable pageable);
 }

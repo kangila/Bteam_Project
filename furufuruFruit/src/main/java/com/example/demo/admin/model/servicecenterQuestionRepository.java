@@ -11,5 +11,5 @@ import com.example.demo.Entity.servicecenterquestion;
 
 public interface servicecenterQuestionRepository extends JpaRepository<servicecenterquestion, Integer> {
 
-	List<servicecenterquestion> findAll();
+	Page<servicecenterquestion> findAll(Pageable pageable);
 }
