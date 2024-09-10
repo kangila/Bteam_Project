@@ -42,8 +42,8 @@ public class product {
 	private String explan;
 	
 	@ManyToOne
-	@JoinColumn(name = "saleuserId")
-	private saleuser saleuser;
+	@JoinColumn(name = "buyuserId")
+	private buyuser buyuser;
 	
 	@OneToMany(mappedBy = "product", cascade = CascadeType.REMOVE)
 	private List<cart> cartList;

@@ -156,7 +156,8 @@
              <a href="#">장바구니</a>
              <a href="/csc">고객센터</a>
              <a sec:authorize="isAnonymous()"href="#" hidden>마이페이지</a>
-             <a sec:authorize="isAuthenticated()" href="#">마이페이지</a>
+             <a sec:authorize="hasRole('ROLE_SALEUSER')" th:href="@{/mypage/Sellmypage}">마이페이지</a>
+             <a sec:authorize="hasRole('ROLE_USER')" th:href="@{/mypage/customer}">마이페이지</a>
             </span>   
         </div>
                                             <!--- 네비게이션 바 -->

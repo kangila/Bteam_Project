@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.Entity.product;
 
-import com.example.demo.productregist.ProductregistRepository;
+import com.example.demo.productregist.ProductuserRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -13,19 +13,6 @@ import lombok.RequiredArgsConstructor;
 @Service
 public class ProductService {
 	
-	
-    // 상품 등록 및 조회 가능 처리 - 동현 
-
-	
-
-	private final ProductregistRepository productRepository;
-	
-	public product saveProduct(product product) {
-		return productRepository.save(product);
-		
-
-		
-	}
 	
 }
 

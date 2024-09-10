@@ -7,13 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class SellermypageController {
-
-	@GetMapping("/mypage/Sellmypage")      // url 경로 
-	public String productregistration() {
-		return "mypage/seleuser_productregist";     // 상품 등록 html 
-		
-	}
-	
 	
 	@GetMapping("/mypage/Sellmypage/inquiry")      // 판매자 상품문의 경로 
 	public String saleuserinquiry() {
