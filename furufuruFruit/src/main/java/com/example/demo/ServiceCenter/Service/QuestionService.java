@@ -33,7 +33,7 @@ public class QuestionService {
 
 		Pageable pageable = PageRequest.of(page, 10, Sort.by(sorts));
 		
-		return this.qr.findByBuyuserId(getBuyuser(id), pageable);
+		return this.qr.findByBuyuser(getBuyuser(id), pageable);
 	}
 	
 	public servicecenterquestion getQuestion(Integer id) throws UserException {
@@ -45,12 +45,12 @@ public class QuestionService {
 		}
 	}
 
-	public void create(String subject, String content) {
-		// TODO Auto-generated method stub
+	public void create(String subject, String content, String id) throws UserException {
 		servicecenterquestion q = new servicecenterquestion();
 		q.setTitle(subject);
 		q.setContents(content);
 		q.setQuestionDate(LocalDateTime.now());
+		q.setBuyuser(getBuyuser(id));
 		this.qr.save(q);
 	}
 
@@ -65,8 +65,8 @@ public class QuestionService {
 	}
 	
 	//유저 정보 가져오기
-	public buyuser getBuyuser(String getId) throws UserException {
-		Optional<buyuser> user = this.userRepository.findById(getId);
+	public buyuser getBuyuser(String id) throws UserException {
+		Optional<buyuser> user = this.userRepository.findById(id);
 		
 		if(user.isPresent()) { 
 			return user.get();

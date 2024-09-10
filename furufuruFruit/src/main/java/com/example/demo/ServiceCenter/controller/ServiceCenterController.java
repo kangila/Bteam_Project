@@ -23,16 +23,15 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
-public class ServiceCenterController {
+public class ServiceCenterController {  
 	
 	private final QuestionService qr;
 	
 	@PreAuthorize("isAuthenticated()")
 	@GetMapping("/csc")
 	public String SCenter(Model model, @RequestParam(value="page", defaultValue="0") int page, Principal principal) throws UserException {
-		//Page<servicecenterquestion> paging = this.qr.getList(page, principal.getName());
-
-		//model.addAttribute("paging", paging);
+		Page<servicecenterquestion> paging = this.qr.getList(page, principal.getName());
+		model.addAttribute("paging", paging);
 		
 		return "csc/CSC_List";
 	}
@@ -42,8 +41,8 @@ public class ServiceCenterController {
 	public String detail(Model model, @PathVariable("id") Integer id, QuestionForm questionForm) throws UserException {
 		servicecenterquestion q = this.qr.getQuestion(id);
 		model.addAttribute("question",  q);
-		return "csc/CSC_Detail";
 		
+		return "csc/CSC_Detail";
 	}
 	
 	@PreAuthorize("isAuthenticated()")
@@ -62,9 +61,7 @@ public class ServiceCenterController {
 			return "csc/CSC_Form";
 		}
 		
-//		buyuser user = this.qr.getBuyuser(principal.getName());
-		
-		this.qr.create(questionForm.getTitle(), questionForm.getContents());
+		this.qr.create(questionForm.getTitle(), questionForm.getContents(), principal.getName());
 		
 		return "redirect:/csc";
 	}

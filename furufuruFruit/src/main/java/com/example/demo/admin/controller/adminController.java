@@ -3,9 +3,11 @@ package com.example.demo.admin.controller;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.Entity.servicecenterquestion;
 import com.example.demo.admin.service.adminService;
@@ -32,11 +34,11 @@ public class adminController {
 	}
 	
 	@GetMapping("/admin/sub_center")
-	public String startSubCenter(Model model) {
+	public String startSubCenter(Model model, @RequestParam(value="page", defaultValue="0") int page) {
 		
-		List<servicecenterquestion> questionList = this.ar.getQustionList();
+		Page<servicecenterquestion> paging = this.ar.getQustionList(page);
 		
-		model.addAttribute("questionList", questionList);
+		model.addAttribute("paging", paging);
 		
 		return "admin/admin_sub_center";
 	}

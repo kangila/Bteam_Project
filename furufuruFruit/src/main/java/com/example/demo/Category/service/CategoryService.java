@@ -19,7 +19,10 @@ public class CategoryService {
 	      return this.pr.findByNameContaining(keyword);
 	   }
 	
-	
+	public List<product> category(String keyword){
+		return this.pr.findByCategoryContaining(keyword);
+		
+	}
 	
 	
 	
