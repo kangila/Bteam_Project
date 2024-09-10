@@ -1,5 +1,5 @@
 *{
-    border: black solid 2px;
+    /* border: black solid 2px; */
 }
 
 .box{
@@ -99,7 +99,14 @@ button{
 
     display: flex;
     justify-content: end;
+    margin-bottom: 200px;
 }
+
+.cardslash{
+    color: aliceblue;
+    font-weight: 800;
+}
+
 
 
 /************** 메인 끝 *************************

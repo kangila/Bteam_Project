@@ -6,6 +6,7 @@ logobtn.addEventListener("click", function(){
 
 
 
+
 // console.log(pagelink);
 // console.log(category);
 // category.value="채소";
@@ -44,3 +45,4 @@ let submit = document.form1;
         //document.form1.submit();
     });
 // }
+

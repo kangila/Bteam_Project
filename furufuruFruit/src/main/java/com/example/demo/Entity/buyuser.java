@@ -20,7 +20,7 @@ public class buyuser {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer buyuserId;	
+	private Integer buyuserId;
 	
 	@Column(nullable = false)
 	private String id;

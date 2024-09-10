@@ -1,16 +1,9 @@
 <!--이순-->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" th:href="@{/cart/cart.css}">
-</head>
-<body>
-    <div id="header">
+<html layout:decorate="~{layout/layout}">
+<div layout:fragment="content" class="container my-3">
 
-    </div>
+    <link rel="stylesheet" th:href="@{/cart/cart.css}">
+
 
     <!-- 메에에에에에에에에에이이이이이이이인-->
 
@@ -29,18 +22,18 @@
                 <div class="cartList">
                     <div class="item">
                         <div class="itemCheck">
-                            <input type="checkbox">
+                            <input type="checkbox" class="checkbox">
                             <!--<p>수제군침케이크</p>-->
-                            <p th:text="${product.name}">수제군침케이크</p>
+                            <p th:text="${cart.product.name}">수제군침케이크</p>
                         </div>
                         <div class="itemInfor">
                             <img th:src="@{/detail_page/x-mas_gunchimSSAK.jpg}" class="itemImg">
                             <div class="itemCount">
                                 <!--<div th:text="${product.price}"><span>원</span></div>-->
-                                <div class="price"><span>9,724원</span></div> <!--nan이 뜨는데 마지막에 콤마 넣으면 됨-->
+                                <div class="price"><span th:text="${cart.product.price}"></span>원</div>
                                 <div class="countbtn">
                                     <button class="plusbtn"> + </button>
-                                    <div><input type="text" style="width: 1.5rem;" class="p_num"></div>
+                                    <div><input type="text" style="text-indent: 1.3rem; width: 5rem;" class="p_num"></div>
                                     <button class="minusbtn"> - </button>
                                 </div>
                             </div>
@@ -68,41 +61,18 @@
                     <div class="cartInlineTotal">
                         <p class="total">결제예정금액</p>
                         <!--<p class="totalPrice"><span>원</span></p>-->
-                        <p class="totalPrice"><span>12,724원</span></p>
+                        <p class="totalPrice"></p>
+                        <p class="totalPrice">원</p>
                     </div>
                     <div class="cupon">쿠폰/적립금은 주문서에서 사용 가능합니다</div>
                 </div>
-                <div class="cartBuy">결제하기</div>
+                <a th:href="@{|/payment|}" class="paymenttext"><div class="cartBuy">결제하기</div></a>
             </div>
         </div>
     </div>
 
     <!--메에에에에에에에에에에이이이이이이ㅣ이이인 끝-->
 
-    <div id="subbot">
-        <!-- <div class="office">
-            <div class="officeCenter">고객센터</div>
-            <div class="officeCenter">전화번호</div>
-            <div class="officeCenter">카톡문의</div>
-            <div class="officeCenter">1:1 문의</div>
-            <div class="officeCenter">대량주문 문의</div>
-            <div class="officeCenter">비회원 문의</div>
-        </div>
-        <div class="office">
-            <div class="officeText">컬리소개 등등</div>
-            <div class="officeText">뭔 법인들</div>
-            <div class="officeText">sns 아이콘</div>
-        </div> -->
-    </div>
-    <div id="bot"> <!--중앙정렬 나중에~-->
-        <!-- <div class="botText">인증</div>
-        <div class="botText">군침</div>
-        <div class="botText">인증</div>
-        <div class="botText">군침</div> -->
-    </div>
-    <div id="footer">
-        <!-- <div class="footerText">풋터들~</div> -->
-    </div>
     <script th:src="@{/cart/cart.js}"></script>
-</body>
+</div>
 </html>

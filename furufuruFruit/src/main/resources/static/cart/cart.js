@@ -13,19 +13,22 @@ const minusbtn = document.querySelector(".minusbtn");
 const plusbtn = document.querySelector(".plusbtn");
 const totalPrice = document.querySelector(".totalPrice");
 
+
+
 // 기본 수량
 let num = 1;
 // DB에서 가져온 가격을 선언
-let price = document.querySelector(".price").innerText;
+let price = parseInt(document.querySelector(".price").innerText);
 
 // 수량 변동
-p_num.value = num;
+p_num.value = parseInt(num);
+
+
 // 금액 변동
-totalPrice.innerText = price;
+totalPrice.innerText = parseInt(price + 3000);
 
 // 수량 감소시 금액과 갯수 증가
 minusbtn.addEventListener('click',function(){
-
 
     if(num === 1){
         alert("최소 수량은 1개입니다.")
@@ -33,7 +36,7 @@ minusbtn.addEventListener('click',function(){
     else if(num > 1){
         num = num - 1;
         p_num.value = num; // num-1을 할당
-        totalPrice.innerText = price * num + 3000; 
+        totalPrice.innerText = price * num + 3000;
     }
 
 });
