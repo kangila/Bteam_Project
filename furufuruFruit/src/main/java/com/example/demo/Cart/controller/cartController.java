@@ -19,12 +19,9 @@ public class cartController {
 	private final cartService cr;
 	private final detailpageservice dpR;
 	
-	@GetMapping("/cart/{cartId}/{productId}")
+	@GetMapping("/cart/{productId}/{cartId}")
 	public String cart(Model model,
-			@PathVariable(value = "cartId") Integer cartId,
-			@PathVariable(value = "productId") Integer product) {
-		product p = this.dpR.getproduct(product);
-		model.addAttribute("product", p);
+			@PathVariable(value = "cartId") Integer cartId) {
 		cart c = this.cr.getcart(cartId);
 		model.addAttribute("cart", c);
 		return "cart/cart";

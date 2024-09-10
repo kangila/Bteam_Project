@@ -1,125 +1,22 @@
 /*이순*/
 *{
-    /* border: 3px solid RGB(255,192,0); */
+    /* border: 3px solid RGB(255,192,0);
     margin: 0;
-    
-}
-
-body{
-    width: 100vw;
-    height: 100vh;
-}
-
-#header{
-    background-color: RGB(255,192,0);
-    text-align: center;
-    height: 18%;
-}
-
-/*최상단div*/
-.icon{
-    display: flex;
-    justify-content: end;
-    height: 30px;
-}
-.iconText{
-    width: fit-content;
-    height: auto;
-    margin-left: 10px;
-}
-.iconCenter{
-    width: fit-content;
-    height: auto;
-    margin-right: 30px;
-}
-
-.iconText.join{
-    color: RGB(255,192,0);
-}
-/*--------------------------------*/
-
-/*검색div*/
-.serch{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50%;
-
-}
-.logo{
-    width: 50px;
-    height: 50px;
-    margin: 0 10px;
-    color: white;
-    background-color: RGB(255,192,0);;
-}
-.serchBar{
-    width: 800px;
-    height: 50px;
-    display: flex;
-}
-input::placeholder{
-    color: rgb(180, 180, 180);
-    font-size: 15px;
-    width: 150px;
-}
-.searchIcon{
-    width: 45px;
-    height: 45px;
-    justify-content: end;
-}
-.cartIcon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    
-}
-.icons{
-    margin-right: 10px;
-    height: 50px;
-    width: 50px;
-}
-/*-------------------------------*/
-
-/*카테고리div = 네비바*/
-.category{
-    display: flex;
-    height: 40px;
-    justify-content: center;
-}
-
-.menu{
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 40px;
-    margin: 0 100px;
-}
-.menuCenter{
-    display: flex;
-    width: 600px;
-    height: 40px;
-
-}
-.menuBundle{
-    justify-content: center;
-    align-items: center;
-    margin:0 25px;
-    width: 25%
-
+     */
 }
 
 
-/*----------------------------------*/
 
 /*메인div*/
 /*% -> px 변환시키기*/
 #main{
-    /* background-color: rgb(141, 172, 79); */
-    text-align: center;
-    height: 70%;
-    background-color: rgb(219, 219, 219);
+    margin: auto;
+    border-radius: 15px;
+    margin-bottom: 200px;
+    width: 1150px;
+    background-color: rgb(255 192 0 / 43%);
+    border-radius: 20px;
+    padding-bottom: 20px;
 }
 
 /*구매목록div*/
@@ -163,18 +60,20 @@ input::placeholder{
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    width: 560px;
-    background-color: aliceblue;
+    width: 600px;
     border-radius: 5px;
 }
 .cartList{
     width: 600px ;
 }
 /*물건 리스트 구역만 나누고 디테일 안함*/
+
+
+
+
 .item{
     height: 100px;
     margin: 18px 0;
-    background-color: aliceblue;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -185,23 +84,49 @@ input::placeholder{
     width: 300px;
     margin: 0 10px;
 }
+    
+/*
 input{
     margin-right: 10px;
 }
+*/
+.itemCheck>input{
+    width: 8%;
+    margin-right: 10px;
+}
+
+.itemCheck>p{
+	display:flex;
+	align-items: center;
+	margin: 0;
+}
+
+/* .checkbox{
+    width: 8%;
+    margin-right: 10px;
+} */
+
+
 
 .itemInfor{
     display: flex;
     padding-left: 15px;
     justify-content: space-evenly;
     width:300px;
+    align-items: center;
 }
 .itemImg{
-    width: 30%;
+    width: 100px;
+    height: 100px;
     border-radius: 10px;
 }
 .itemCount{
     margin: 15px;
 }
+
+
+
+
 .countbtn{
     display: flex;
 }
@@ -209,11 +134,9 @@ input{
     margin-left: 10px;
 }
 .cartCash{
-    height: 210px;
     width: 400px;
     text-align: start;
     padding: 10px;
-    background-color: aliceblue;
     border-radius: 10px;
 }
 .payment{
@@ -228,7 +151,7 @@ input{
 .cartInlineTotal{
     margin-top: 30px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 .itemPrice{
     font-size: 15px;
@@ -243,10 +166,12 @@ input{
 }
 .total{
     align-self: center;
+    padding: 0 5px;
 }
 .totalPrice{
     font-size: 20px;
     font-weight: bold;
+    padding-left: 10px;
 }
 .cupon{
     display: flex;
@@ -265,73 +190,8 @@ input{
     
 }
 
+.paymenttext{
+    text-decoration: none;
+}
+
 /*-----------------------------*/
-
-
-/*회사정보div*/
-#subbot{
-    background-color: RGB(255,192,0);
-    text-align: left;
-    display: flex;
-    height: 25%;
-    /* padding-top: 1%;
-    padding-left: 1%; */
-}
-
-
-
-/*고객센터div*/
-.office{
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    height: 100%;
-}
-
-.officeCenter{
-    height: 12%;
-}
-
-.officeText{
-    height: 20%;
-}
-
-/*------------------------*/
-
-
-/*인증div*/
-#bot{
-    background-color:RGB(255,192,0);
-    text-align: center;
-    display: flex;
-    height: 10%;
-}
-.botText{
-    align-items: center;
-    justify-content: center;
-    width: 25%;
-}
-
-/*--------------------------*/
-
-/*풋터div*/
-#footer{
-    background-color: RGB(255,192,0);
-    text-align: center;
-    height: 10%;
-    padding-top: 1%;
-}
-
-.footerText{
-    height: 80%;
-}
-
-
-
-
-
-
-
-
-
-
