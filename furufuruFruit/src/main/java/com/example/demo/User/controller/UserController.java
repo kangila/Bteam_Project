@@ -32,7 +32,8 @@ public class UserController {
 	
 	@PostMapping("/signup")
 	public String signup(@Valid UserCreateForm userCreateForm, BindingResult bindingResult) {
-
+		System.out.println(userCreateForm.getEmail1());
+		System.out.println(userCreateForm.getEmail2());
 		if(bindingResult.hasErrors()) {
 			return "signup/signup_form";
 		}
