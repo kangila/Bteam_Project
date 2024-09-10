@@ -6,7 +6,7 @@
 
 
 
-
+// 위시리스트 토글 기능
 function toggleAct (button) {
         button.classList.toggle("act");
   };
@@ -45,8 +45,9 @@ let price = document.querySelector(".price").innerText;
 
 // 수량 변동
 p_num.value = num;
+console.log(p_num.value);
 // 금액 변동
-sumPrice.innerText = price;
+totalPrice.innerText = price;
 
 // 수량 감소시 금액과 개수 증가
 minusbtn.addEventListener('click',function(){
@@ -58,7 +59,8 @@ minusbtn.addEventListener('click',function(){
     else if(num > 1){
         num = num - 1;
         p_num.value = num; // num-1을 대입
-        sumPrice.innerText = price*num;
+        console.log(p_num.value);
+        totalPrice.innerText = price*num;
     }
 
 });
@@ -67,6 +69,7 @@ minusbtn.addEventListener('click',function(){
 plusbtn.addEventListener('click',function(){
     num = num + 1;
     p_num.value = num; // num+1을 대입
+    console.log(p_num.value);
     totalPrice.innerText = price*num;
 
 });

@@ -11,20 +11,6 @@
 
 
 
-#head{
-    background-color: RGB(255,192,0);
-    height: 150px;
-}
-
-
-
-
-/********************** head 끝 *************************
-*********************************************************/
-
-
-
-
 #main{
     width: 1150px;
     margin: auto;
@@ -38,7 +24,7 @@
 }
 
 
-img{
+#main>img{
     border-radius: 15px;
     margin-right: 30px;
     margin-left: auto;
@@ -118,8 +104,12 @@ img{
     justify-content: center;
     align-items: center;
     color: aliceblue;
+
 }
 
+.carttext{
+    text-decoration: none;
+}
 
 /*민지가 준 코드*/
 /* .button {
