@@ -1,6 +1,6 @@
 <nav th:fragment="headerFragment">
 <style>
-        /* ------------------헤더 파트---------------------------- */        
+/* ------------------헤더 파트---------------------------- */        
 
         header{
             background-color: rgb(255,192,0);
@@ -52,7 +52,6 @@
         .search {
            position: relative;
            width: 350px;
-           
         }
 
         input {
@@ -64,7 +63,7 @@
         }
 
         .search-bnticon {
-		width: 50px;
+		    width: 50px;
           height: 45px;
          position : absolute;
          background-color: green;
@@ -153,7 +152,8 @@
               </div>
             </form>
             <span class="shopping-mypage">
-             <a href="#">장바구니</a>
+              <!--0909 장바구니 연동중(추후 수정 예정)-->
+             <a th:href="@{|/cart/1/1|}" class="cart">장바구니</a>
              <a href="/csc">고객센터</a>
              <a sec:authorize="isAnonymous()"href="#" hidden>마이페이지</a>
              <a sec:authorize="isAuthenticated()" href="#">마이페이지</a>

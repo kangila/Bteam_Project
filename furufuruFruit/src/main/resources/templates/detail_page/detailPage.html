@@ -1,24 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<!--이순-->
+<html layout:decorate="~{layout/layout}">
+<div layout:fragment="content" class="container my-3">
+
+
     <link rel="stylesheet" th:href="@{/detail_page/detailPage.css}">
-</head>
-<body>
-
-
-
-
-    <!-- 헤더 -->
-    
-    
-    
-    <div id="head">head</div>
-
-
-
 
 
     <!--메인-->
@@ -41,7 +26,7 @@
             <div class="mainPrice">
                 <h2>
                     <span style="color: rgb(255, 99, 99);">9724%</span>
-                    <span th:text="${product.price}"></span>
+                    <span th:text="${product.price}"></span><span>원</span>
                 </h2>
             </div>
             <h2>원산지: 군침왕국</h2>
@@ -84,7 +69,7 @@
                     <div class="itemCount">
                         <div class="countbtn">
                             <button class="plusbtn"> + </button>
-                            <div><input type="text" style="width: 1.5rem;" class="p_num"></div>
+                            <input type="text" style="text-indent: 1.3rem; width: 5rem;" class="p_num">
                             <button class="minusbtn"> - </button>
                         </div>
                         <div>
@@ -100,7 +85,7 @@
             </div>
             <div class="mainInforBox between">
                 <button class="wishbtn" onclick="toggleAct(this)">♥</button>
-                <a th:href="@{|/cart/{cartId}/{productId}|}"><div class="cartbtn">장바구니 담기</div></a>
+                <a th:href="@{|/cart/${product.productId}/1|}" class="carttext"><div class="cartbtn">장바구니 담기</div></a>
             </div>
 
         </div>
@@ -400,7 +385,7 @@
     <div id="QnA">
         <h3>문의하기</h3>
         <li>상품에 대한 문의를 남기는 공간입니다. 해당 게시판의 성격과 다른 글은 사전동의 없이 담당 게시판으로 이동될 수 있습니다.</li>
-        <li>배송관련, 주문(취소/교환/환불)관련 문의 및 요청사항은 <a th:href="@{/csc/inquiry}">1:1 문의</a>에 남겨주세요</li>
+        <li>배송관련, 주문(취소/교환/환불)관련 문의 및 요청사항은 <a th:href="@{/mypage/inquiry/products}">1:1 문의</a>에 남겨주세요</li>
         <br>
         <table>
             <th style="width: 850px;">제목</th>
@@ -484,25 +469,7 @@
 
 
 
-
-
-
-
-
-    <!--풋터-->
-
-
-    <div id="footer">footer</div>
-
-
-
-
-
-
-
-
-
     <script th:src="@{/detail_page/detailPage.js}"></script>
 
-</body>
+</div>
 </html>
