@@ -1,6 +1,12 @@
 // 도메인 직접 입력 or domain option 선택
 const domainListEl = document.querySelector('#domain-list')
 const domainInputEl = document.querySelector('#domain-txt')
+
+const formtest = document.signUpForm[6];
+
+console.log(formtest)
+
+
 // select 옵션 변경 시
 domainListEl.addEventListener('change', (event) => {
   // option에 있는 도메인 선택 시
@@ -70,6 +76,7 @@ let btn = document.querySelector(".signupbtn");
 const signUpFormBtn = document.signUpForm;
 
 btn.addEventListener('click', function(){
+  domainInputEl.disabled = false
   document.signUpFormBtn.submit();
 
 })

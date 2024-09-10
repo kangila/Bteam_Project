@@ -7,7 +7,7 @@
         <div class="signupcontainer">
         <!-- form -->
         <form id="signUpForm" th:action="@{/user/signup}" th:object="${userCreateForm}" name="signUpForm" method="post">
-         <div th:replace="~{login/form_errors :: formErrorsFragment}"></div>
+         <div id="erorrs" th:replace="~{login/form_errors :: formErrorsFragment}"></div>
           <!-- member container -->
           <div class="member-container">
               <!-- member header -->
@@ -56,12 +56,12 @@
                   <span>@</span>
                     <input class="box" id="domain-txt" type="text" th:field="*{email2}"/>
                     <select name="box" id="domain-list" type="text" class="box">
+                      <option value="type">직접입력</option>
                       <option value="naver.com">naver.com</option>
                       <option value="google.com">google.com</option>
                       <option value="hanmail.net">hanmail.net</option>
                       <option value="nate.com">nate.com</option>
                       <option value="kakao.com">kakao.com</option>
-                      <option value="type">직접입력</option>
                     </select> 
                 </div>
               </div>
